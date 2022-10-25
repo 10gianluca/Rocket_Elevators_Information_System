@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RocketElevatorGroupWebsite</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	<body class="smoothscroll enable-animation">
+
+	<%= render partial: 'partials/navbar'%>
+    <%= render partial: 'partials/slideshow'%>
+    <%= render partial: 'partials/services'%>
+	<%= render partial: 'partials/ribbon'%>
+	<%= render partial: 'partials/portfolio'%>
+	<%= render partial: 'partials/new'%>
+	<%= render partial: 'partials/ceo'%>
+	<%= render partial: 'partials/clients'%>
+	<%= render partial: 'partials/contact'%>
+	<%= render partial: 'partials/footer'%>
+
+
+
+
+		</div>
+  </body>
+</html>
