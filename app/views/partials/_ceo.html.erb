@@ -5,7 +5,7 @@
 					<div class="owl-carousel text-center owl-testimonial m-0" data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
 						<div class="testimonial">
 							<figure>
-								<img class="rounded" src="demo_files/images/ceo.png" alt="" />
+								<%= image_tag "images/ceo.png", height: 65 , width: 65 %>
 							</figure>
 							<div class="testimonial-content p-0">
 								<p class="lead">Rocket Elevators Was Started From The Ground Up.</p>
@@ -16,9 +16,11 @@
 							</div>
 						</div>
 						<div class="testimonial">
+							<div class="rounded">
 							<figure>
-								<%= image_tag(image_path('/images/Screenshot_20220618-155158_Photos.jpg')) %>
+								<%= image_tag "images/Screenshot_20220618-155158_Photos.jpg", height: 65 , width: 65 %>
 							</figure>
+							</div>
 							<div class="testimonial-content p-0">
 								<p class="lead">Single Handedly Built 87 Elevators Himself</p>
 								<cite>
