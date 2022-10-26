@@ -5,8 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %>
+
+    <%= stylesheet_link_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
 	<body class="smoothscroll enable-animation">
