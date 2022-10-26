@@ -16,5 +16,9 @@
 //= require bootstrap-sprockets
 //= require QuoteForm
 //= require scripts
+//= require bootstrap
+//= require cable
+//= require contact
+
 
 
