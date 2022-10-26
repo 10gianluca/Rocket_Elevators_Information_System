@@ -13,4 +13,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-
+//= require cable
+//= require demo.revolution_slider
+//= require_tree .
