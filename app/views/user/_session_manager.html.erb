@@ -1,0 +1,118 @@
+<% if current_user %>
+    <div class="container">
+                            <!-- Mobile Menu Button -->
+                            <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                                <i class="fa fa-bars"></i>
+                                <%# User functionality %>
+                            </button>
+                            <!-- Logo -->
+                            <a class="logo float-left scrollTo" href="#top">
+                                <%= image_tag "R2.png" %>
+                            </a>
+                            <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                                <nav class="nav-main">
+                                    <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+                                        <li class="active">
+                                            <!-- HOME -->
+                                            <a href="#top">
+                                                HOME
+                                            </a>
+                                        </li>
+                                        <li><!-- LOGIN -->
+                                            <a href="/login">
+                                                LOGIN
+                                            </a>
+                                        </li>
+                                        <li><!-- SERVICES -->
+                                            <a href="#services">
+                                                SERVICES
+                                            </a>
+                                        </li>
+                                        <li><!-- Portfolio -->
+                                            <a href="#portfolio">
+                                                PORTFOLIO
+                                            </a>
+                                        </li>
+                                        <li><!-- NEWS -->
+                                            <a href="#news">
+                                                NEWS
+                                            </a>
+                                        </li>
+                                        <li><!-- CLIENTS -->
+                                            <a href="#clients">
+                                                CLIENTS
+                                            </a>
+                                        </li>
+                                        <li><!-- CONTACT -->
+                                            <a href="#contact">
+                                                CONTACT
+                                            </a>
+                                        </li>
+                                        <li><!-- LOGOUT -->
+                                            <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+                                        </li>
+                                    </ul>
+
+                                </nav>
+                            </div>
+
+    </div>
+<% else %>
+    <div class="container">
+                            <!-- Mobile Menu Button -->
+                            <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                                <i class="fa fa-bars"></i>
+                                <%# User functionality %>
+                            </button>
+                            <!-- Logo -->
+                            <a class="logo float-left scrollTo" href="#top">
+                                <%= image_tag "R2.png" %>
+                            </a>
+                            <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                                <nav class="nav-main">
+                                    <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+                                        <li class="active">
+                                            <!-- HOME -->
+                                            <a href="#top">
+                                                HOME
+                                            </a>
+                                        </li>
+                                        <li><!-- SIGNUP -->
+                                            <%= link_to "SIGN UP", new_user_registration_path %>
+                                        </li>
+                                        <li><!-- LOGIN -->
+                                            <%= link_to "LOGIN", new_user_session_path %>
+                                        </li>
+                                        <li><!-- SERVICES -->
+                                            <a href="#services">
+                                                SERVICES
+                                            </a>
+                                        </li>
+                                        <li><!-- Portfolio -->
+                                            <a href="#portfolio">
+                                                PORTFOLIO
+                                            </a>
+                                        </li>
+                                        <li><!-- NEWS -->
+                                            <a href="#news">
+                                                NEWS
+                                            </a>
+                                        </li>
+                                        <li><!-- CLIENTS -->
+                                            <a href="#clients">
+                                                CLIENTS
+                                            </a>
+                                        </li>
+                                        <li><!-- CONTACT -->
+                                            <a href="#contact">
+                                                CONTACT
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </nav>
+                            </div>
+
+    </div>
+
+<% end %>
