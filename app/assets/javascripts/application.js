@@ -21,6 +21,4 @@
 //= require bootstrap
 //= require cable
 //= require contact
-
-
-
+//= require demo.revolution_slider
