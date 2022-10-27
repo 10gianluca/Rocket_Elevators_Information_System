@@ -10,11 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_27_131316) do
+ActiveRecord::Schema.define(version: 2022_10_27_150735) do
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "buildingType"
-    t.string "residential_apartment"
+    t.boolean "residential_type"
+    t.boolean "commercial_type"
+    t.boolean "corporate_type"
+    t.boolean "hybrid_type"
+    t.integer "residential_apartment"
     t.integer "residential_floor"
     t.integer "residential_basement"
     t.integer "commercial_business"
@@ -34,11 +37,15 @@ ActiveRecord::Schema.define(version: 2022_10_27_131316) do
     t.integer "hybrid_occupant"
     t.integer "hybrid_hour"
     t.integer "cage_amount"
-    t.string "product_line"
-    t.integer "priceElevator"
-    t.integer "totalPrice"
+    t.boolean "standard_line"
+    t.boolean "premium_line"
+    t.boolean "excelium_line"
+    t.integer "price_elevator"
+    t.integer "total_price"
     t.integer "installation_fees"
     t.integer "final_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
