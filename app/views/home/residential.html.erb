@@ -1,0 +1,380 @@
+  <head>
+    <title>RocketElevatorGroupWebsite</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %>
+
+    <%= stylesheet_link_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+	<body class="smoothscroll enable-animation">
+
+		<!-- SLIDE TOP -->
+		<div id="slidetop">
+
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-4">
+						<h6><i class="icon-heart"></i> Rocket Elevators</h6>
+						<p>Elevate Safety, Speed and style</p>
+					</div>
+
+					<div class="col-md-4">
+						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+						<ul class="list-unstyled">
+							<li><b>Address:</b> <br /> Wellington, Verdun, Canada</li>
+							<li><b>Phone:</b> 1(800)-555-1234</li>
+							<li><b>Email:</b> <a href="mailto:support@yourname.com">support@rocketelevators.com</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+
+		</div>
+		<!-- /SLIDE TOP -->
+
+
+		<!-- wrapper -->
+		<div id="wrapper">
+
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+
+						<!-- Logo -->
+						<a class="logo float-left scrollTo" href="#top">
+							<%= image_tag "R2.png" %>
+						</a>
+
+						<!-- 
+							Top Nav 
+							
+							AVAILABLE CLASSES:
+							submenu-dark = dark sub menu
+						-->
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+
+								<!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li class="active">
+										<!-- HOME -->
+										<a href="index.html">
+											HOME
+										</a>
+									</li>
+									<li><!-- SERVICES -->
+										<a href="index.html#services">
+											SERVICES
+										</a>
+									</li>
+									<li><!-- Portfolio -->
+										<a href="index.html#portfolio">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a href="index.html#news">
+											NEWS
+										</a>
+									</li>
+									<li><!-- CLIENTS -->
+										<a href="index.html#clients">
+											CLIENTS
+										</a>
+									</li>
+									<li><!-- CONTACT -->
+										<a href="index.html#contact">
+											CONTACT
+										</a>
+									</li>
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+
+			</div>
+
+
+
+			
+
+			<hr class="m-0" /><!-- 1px line separator -->
+
+			<section id="overview">
+				<div class="container text-center">
+
+					<div class="row text-left">
+
+						<div class="col-sm-8">
+							<%= image_tag "images/w6-min.jpg" %>
+						</div>
+
+						<div class="col-sm-4">
+							<h3 class="fw-300">Residential <span>Overview</span></h3>
+						
+							<p>Here at Rocket Elevators we offer amazing elevators for amazing prices.</p>
+							
+							<hr />
+
+							<ul class="list-unstyled list-icons">
+								<li><i class="fa fa-check"></i> Safe</li>
+								<li><i class="fa fa-check"></i> Fast</li>
+								<li><i class="fa fa-check"></i> Unique</li>
+								<li><i class="fa fa-check"></i> Customizable</li>
+								<li><i class="fa fa-check"></i> Reliable</li>
+							</ul>
+
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Parallax -->
+			<section class="parallax parallax-1" style="background-image: url('demo_files/images/AdobeStock_33298664.jpeg');">
+				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+
+				<div class="container">
+
+					<div class="text-center">
+						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2>
+						<a class="btn btn-default btn-lg" href="form.html">Request A Quote <i class="fa fa-angle-right"></i></a> 
+						&nbsp; OR &nbsp; 
+						<a class="btn btn-blue btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
+					</div>
+
+				</div>
+			</section>
+			<!-- CONTACT -->
+			<section id="contact">
+				<div class="container">
+
+					<header class="text-center mb-60">
+						<h2>Contact Us</h2>
+						<p class="lead font-lato">Hear Back From Us Faster Than Our Elevators</p>
+						<hr />
+					</header>
+
+
+					<div class="row">
+
+						<!-- FORM -->
+						<div class="col-md-8 col-sm-8">
+
+							<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
+
+							<!-- Alert Success -->
+							<div id="alert_success" class="alert alert-success mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Thank You!</strong> Your message successfully sent!
+							</div><!-- /Alert Success -->
+
+
+							<!-- Alert Failed -->
+							<div id="alert_failed" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>[SMTP] Error!</strong> Internal server error!
+							</div><!-- /Alert Failed -->
+
+
+							<!-- Alert Mandatory -->
+							<div id="alert_mandatory" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+							</div><!-- /Alert Mandatory -->
+
+
+							<form action="php/contact.php" method="post" enctype="multipart/form-data">
+								<fieldset>
+									<input type="hidden" name="action" value="contact_send" />
+
+									<div class="row">
+											<div class="col-md-4">
+												<label for="contact:name">Full Name*</label>
+												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:email">Business Name</label>
+												<input required type="email" value="" class="form-control" name="contact[email][required]" id="contact:email">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:phone">Phone*</label>
+												<input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-4">
+												<label for="contact:subject">Email*</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:subject">Project Name</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+											</div>
+											<div class="col-md-4">
+												<label for="contact_department">Department*</label>
+												<select class="form-control pointer" name="contact[department]">
+													<option value="">--- Select ---</option>
+													<option value="Marketing">Residential</option>
+													<option value="Webdesign">Corporate</option>
+												</select>
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-6">
+												<label for="contact:message">Project Description</label>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
+											</div>
+											<div class="col-md-6">
+												<label for="contact:message">Message*</label>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-12">
+												<label for="contact:attachment">File Attachment</label>
+
+												<!-- custom file upload -->
+												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
+												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+
+											</div>
+									</div>
+
+								</fieldset>
+
+								<div class="row">
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-blue"><i class="fa fa-check"></i> SEND MESSAGE</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+						<!-- /FORM -->
+
+
+						<!-- INFO -->
+						<div class="col-md-4 col-sm-4">
+							<h2>Visit Us</h2>
+							<iframe
+								width="400"
+								height="450"
+								style="border:0"
+								loading="lazy"
+								allowfullscreen
+								referrerpolicy="no-referrer-when-downgrade"
+								src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBarDqKjKppyISZpjqIi5CKxGJwTea_3vs
+									&q=4468-Rue-Wellington,Verdun-QC">
+							</iframe>
+
+						<hr />
+							<p>
+								<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> Wellington, Verdun, Canada</span>
+								<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:1800-555-1234" class="text-blue">1(800)-555-1234</a></span>
+								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:mail@yourdomain.com" class="text-blue">mail@yourdomain.com</a></span>
+							</p>
+
+						</div>
+						<!-- /INFO -->
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /CONTACT -->
+			<!-- FOOTER -->
+			<footer id="footer">
+				<div class="container">
+
+
+					<div class="row">
+
+						<!-- col #1 -->
+						<div class="col-md-8">
+
+							<h3 class="letter-spacing-1">WHY US?</h3>
+
+							<!-- Small Description -->
+							<p>
+								Rocket Elevators has been making world class elevators for almost 50 years, and with no plans to stop, just like our elevators we're going to the top.
+							</p>
+							<h2>1(800)-555-1234</h2>
+						</div>
+						<!-- /col #1 -->
+
+						<!-- col #2 -->
+						<div class="col-md-4">
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+							<!-- Newsletter Form -->
+							<p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+									<span class="input-group-btn">
+										<button class="btn btn-danger" type="submit">Subscribe</button>
+									</span>
+								</div>
+							</form>
+							<!-- /Newsletter Form -->
+
+
+						</div>
+						<!-- /col #2 -->
+
+					</div>
+
+
+				</div>
+
+				<div class="copyright">
+					<div class="container">
+						<ul class="float-right m-0 list-inline mobile-block">
+							<li><a href="#">Terms &amp; Conditions</a></li>
+							<li>&bull;</li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+						&copy; All Rights Reserved, Company LTD
+					</div>
+				</div>
+
+			</footer>
+			<!-- /FOOTER -->
+
+		</div>
+		<!-- /wrapper -->

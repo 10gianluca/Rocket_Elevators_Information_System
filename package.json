@@ -1,5 +1,7 @@
 {
   "name": "rocketElevatorGroupWebsite",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.6.1"
+  }
 }
