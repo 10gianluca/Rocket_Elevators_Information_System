@@ -1,2 +1,0 @@
-class UserList < ApplicationRecord
-end

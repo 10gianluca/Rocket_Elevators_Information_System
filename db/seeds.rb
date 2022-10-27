@@ -5,76 +5,84 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-EmployeeList.destroy_all
+Users.destroy_all
 
-EmployeeList.create!([{
+Users.create!([{
   title: "Gopher",
-  first_name: "Mathieu",
-  last_name: "Houde",
-  email: "mathieu.houde@codeboxx.biz"	
+  firstname: "Mathieu",
+  lastname: "Houde",
+  email: "mathieu.houde@codeboxx.biz",
+  password: "password"
   
 },
 
 {
     title: "Maximalist",
-    first_name: "Patrick ",
-    last_name: "Thibault",
-    email: "patrick.thibault@codeboxx.biz"		
-    
+    firstname: "Patrick ",
+    lastname: "Thibault",
+    email: "patrick.thibault@codeboxx.biz",
+    password: "password"   
 },
 {
     title: "Captain",
-    first_name: "Francis",
-    last_name: "Patry-Jessop",
-    email: "francis.patry-jessop@codeboxx.biz"	
-    
+    firstname: "Francis",
+    lastname: "Patry-Jessop",
+    email: "francis.patry-jessop@codeboxx.biz",	
+    password: "password"   
 },
 {
     title: "The Man",
-    first_name: "David",
-    last_name: "Amyot",
-    email: "david.amyot@codeboxx.biz"	
+    firstname: "David",
+    lastname: "Amyot",
+    email: "david.amyot@codeboxx.biz",
+    password: "password"
     
 },
 {
     title: "AI Master",
-    first_name: "Marie-Ève ",
-    last_name: "Goupil",
-    email: "marie-eve.goupil@codeboxx.biz"	
+    firstname: "Marie-Ève ",
+    lastname: "Goupil",
+    email: "marie-eve.goupil@codeboxx.biz",
+    password: "password"
 },
 {
     title: "The Tank",
-    first_name: "François",
-    last_name: "Boivin",
-    email: "francois.boivin@codeboxx.biz"		
+    firstname: "François",
+    lastname: "Boivin",
+    email: "francois.boivin@codeboxx.biz",	
+    password: "password"	
     
 },
 {
     title: "Beard whisperer",
-    first_name: "Timothy",
-    last_name: "Wever",
-    email: "timothy.wever@codeboxx.biz"	
+    firstname: "Timothy",
+    lastname: "Wever",
+    email: "timothy.wever@codeboxx.biz"	,
+    password: "password"
     
 },
 {
     title: "I <3 Winnipeg",
-    first_name: "Kiril",
-    last_name: "Kleinerman",
-    email: "kiril.kleinerman@codeboxx.biz"		
+    firstname: "Kiril",
+    lastname: "Kleinerman",
+    email: "kiril.kleinerman@codeboxx.biz",
+    password: "password"	
     
 },
 {
     title: "Scrums are too early",
-    first_name: "Felicia",
-    last_name: "Hartono",
-    email: "felicia.hartono@codeboxx.biz"		
+    firstname: "Felicia",
+    lastname: "Hartono",
+    email: "felicia.hartono@codeboxx.biz",	
+    password: "password"	
     
 },
 {
     title: "They really are.",
-    first_name: "Eileen ",
-    last_name: "Ai",
-    email: "eileen.ai@codeboxx.biz"		
+    firstname: "Eileen ",
+    lastname: "Ai",
+    email: "eileen.ai@codeboxx.biz",
+    password: "password"
     
 }
 ])
