@@ -85,36 +85,23 @@
 									Add .external for an external link!
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active">
-										<!-- HOME -->
-										<a href="index.html">
-											HOME
-										</a>
+									<li >
+										<%= link_to "Home" , root_path %>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="index.html#services">
-											SERVICES
-										</a>
+										<%= link_to "Service" , root_path %>
 									</li>
 									<li><!-- Portfolio -->
-										<a href="index.html#portfolio">
-											PORTFOLIO
-										</a>
+										<%= link_to "Portfolio" , root_path %>
 									</li>
 									<li><!-- NEWS -->
-										<a href="index.html#news">
-											NEWS
-										</a>
+										<%= link_to "News" , root_path %>
 									</li>
 									<li><!-- CLIENTS -->
-										<a href="index.html#clients">
-											CLIENTS
-										</a>
+										<%= link_to "Clients" , root_path %>
 									</li>
 									<li><!-- CONTACT -->
-										<a href="index.html#contact">
-											CONTACT
-										</a>
+										<%= link_to "Contact" , root_path %>
 									</li>
 								</ul>
 
@@ -168,8 +155,8 @@
 
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2>
-						<a class="btn btn-default btn-lg" href="form.html">Request A Quote <i class="fa fa-angle-right"></i></a> 
-						&nbsp; OR &nbsp; 
+						
+						<%= link_to 'Request a Quote', home_form_path, class:"btn btn-blue btn-lg " %> OR &nbsp; 
 						<a class="btn btn-blue btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
 					</div>
 
