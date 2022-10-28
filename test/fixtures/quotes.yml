@@ -1,67 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  residential_type: false
-  commercial_type: false
-  corporate_type: false
-  hybrid_type: false
-  residential_apartment: 1
-  residential_floor: 1
-  residential_basement: 1
-  commercial_business: 1
-  commercial_floor: 1
-  commercial_basement: 1
-  commercial_parking: 1
-  commercial_cage: 1
-  corporate_companie: 1
-  corporate_floor: 1
-  corporate_basement: 1
-  corporate_parking: 1
-  corporate_occupant: 1
-  hybrid_business: 1
-  hybrid_floor: 1
-  hybrid_basement: 1
-  hybrid_parking: 1
-  hybrid_occupant: 1
-  hybrid_hour: 1
-  cage_amount: 1
-  standard_line: false
-  premium_line: false
-  excelium_line: false
-  price_elevator: 1
-  total_price: 1
-  installation_fees: 1
-  final_price: 1
-
-two:
-  residential_type: false
-  commercial_type: false
-  corporate_type: false
-  hybrid_type: false
-  residential_apartment: 1
-  residential_floor: 1
-  residential_basement: 1
-  commercial_business: 1
-  commercial_floor: 1
-  commercial_basement: 1
-  commercial_parking: 1
-  commercial_cage: 1
-  corporate_companie: 1
-  corporate_floor: 1
-  corporate_basement: 1
-  corporate_parking: 1
-  corporate_occupant: 1
-  hybrid_business: 1
-  hybrid_floor: 1
-  hybrid_basement: 1
-  hybrid_parking: 1
-  hybrid_occupant: 1
-  hybrid_hour: 1
-  cage_amount: 1
-  standard_line: false
-  premium_line: false
-  excelium_line: false
-  price_elevator: 1
-  total_price: 1
-  installation_fees: 1
-  final_price: 1
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value
