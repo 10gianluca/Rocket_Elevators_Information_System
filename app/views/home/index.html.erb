@@ -50,55 +50,7 @@
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 				<!-- TOP NAV -->
 				<header id="topNav">
-					<div class="container">
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
-						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
-							<%= image_tag "R2.png" %>
-						</a>
-						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-							<nav class="nav-main">
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active">
-										<!-- HOME -->
-										<a href="#top">
-											HOME
-										</a>
-									</li>
-									<li><!-- SERVICES -->
-										<a href="#services">
-											SERVICES
-										</a>
-									</li>
-									<li><!-- Portfolio -->
-										<a href="#portfolio">
-											PORTFOLIO
-										</a>
-									</li>
-									<li><!-- NEWS -->
-										<a href="#news">
-											NEWS
-										</a>
-									</li>
-									<li><!-- CLIENTS -->
-										<a href="#clients">
-											CLIENTS
-										</a>
-									</li>
-									<li><!-- CONTACT -->
-										<a href="#contact">
-											CONTACT
-										</a>
-									</li>
-								</ul>
-
-							</nav>
-						</div>
-
-					</div>
+					<%= render 'user/session_manager' %>
 				</header>
 				<!-- /Top Nav -->
 			</div>
@@ -172,7 +124,8 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %> 
+									<a class="btn btn-blue btn-lg" href="/form">Quote Form</a>
+									<%# <%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %>  %>
 							</div>
 						</li>
 						<!-- SLIDE 2 Residential Building-->
@@ -208,7 +161,8 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %>
+								<a class="btn btn-blue btn-lg" href="/residential">Residential</a>
+									<%# <%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %>
 							</div>
 						</li>
 						<!-- SLIDE 3 Corporate Buildings -->
@@ -245,7 +199,8 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-									<%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %> 
+									<%# <%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %>  
+									<a class="btn btn-blue btn-lg" href="/corporate">Corporate</a>
 									
 							</div>
 						</li>
@@ -255,7 +210,7 @@
 				</div>
 			</div>
 			<!-- /REVOLUTION SLIDER -->
-            <hr class="m-0" /><!-- 1px line separator -->
+            <hr class="m-0" />
 			<!-- Services -->
 			<section id="services">
 				<div class="container">
@@ -275,14 +230,15 @@
 							</a>
 							<h3 class="mt-10">Best Residential Elevators</h3>
 							<p>We offer best inclass residential elevators for all types of homes.</p>
-							<a href="residential.html" class="btn btn-default">Residential Details</a>
+							<%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %> 
 						</div>
 
 						<div class="col-sm-4">
 							<%= image_tag "images/AdobeStock_179073967.jpeg", height: 240 , width: 360 %>
 							<h3 class="mt-10">Corporate Elevators</h3>
 							<p>Rocket Elevators also has world class elevators for corporate buildings.</p>
-							<a href="Corporate.html" class="btn btn-default">Corporate Details</a>
+							<%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %> 
+
 						</div>
 
 					</div>
@@ -297,9 +253,8 @@
 				<div class="container">
 
 					<div class="text-center">
-						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2>
-						<a class="btn btn-default btn-lg" href="form.html">Request A Quote <i class="fa fa-angle-right"></i></a> 
-						&nbsp; OR &nbsp; 
+						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2> 
+						<%= link_to 'Request A Quote', home_form_path, class:"btn btn-blue btn-lg " %> 
 						<a class="btn btn-blue btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
 					</div>
 

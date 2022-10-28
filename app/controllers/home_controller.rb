@@ -7,5 +7,7 @@ class HomeController < ApplicationController
   end
   def residential
   end  
+  def login
+  end
 
 end
