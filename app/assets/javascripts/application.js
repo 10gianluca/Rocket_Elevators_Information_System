@@ -10,7 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_self
+//= require_tree .
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-
+//= require bootstrap-sprockets
+//= require QuoteForm
+//= require scripts
+//= require bootstrap
+//= require cable
+//= require contact
+//= require demo.revolution_slider

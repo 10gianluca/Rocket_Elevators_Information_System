@@ -1,1 +1,1176 @@
-<h1>hello world <h1>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Rocket Elevators</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Gianluca Ciccone" />
+		
+		<link rel="shortcut icon" type="image/jpg" href="demo_files/images/Tab.png"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- WEB FONTS : use %7C instead of | (pipe) -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- REVOLUTION SLIDER -->
+		<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+		<!-- PAGE LEVEL SCRIPTS -->
+		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
+	</head>
+	<body class="smoothscroll enable-animation">
+
+		<!-- wrapper -->
+		<div id="wrapper">
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+						<!-- Logo -->
+						<a class="logo float-left scrollTo" href="#top">
+						    <%= image_tag "R2.png" %>	
+						</a>
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li class="active">
+										<!-- HOME -->
+										<a href="#top">
+											HOME
+										</a>
+									</li>
+									<li><!-- SERVICES -->
+										<a href="#services">
+											SERVICES
+										</a>
+									</li>
+									<li><!-- Portfolio -->
+										<a href="#portfolio">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a href="#news">
+											NEWS
+										</a>
+									</li>
+									<li><!-- CLIENTS -->
+										<a href="#clients">
+											CLIENTS
+										</a>
+									</li>
+									<li><!-- CONTACT -->
+										<a href="#contact">
+											CONTACT
+										</a>
+									</li>
+									
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+			</div>
+			<!-- REVOLUTION SLIDER -->
+			<div class="slider fullwidthbanner-container roundedcorners">
+				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview2">
+					<ul class="hide">
+					
+						<!-- SLIDE 1 Slogan  -->
+						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off"  data-title="Rocket Elevators">
+							<!-- MAIN IMAGE -->
+                            <%= image_tag "images/AdobeStock_103570025.jpeg"%>
+							<div class="tp-caption white_big skewfromleft tp-resizeme"
+								data-x="165"
+								data-y="100" 
+								data-speed="400"
+								data-start="1500"
+								data-easing="Power3.easeInOut"
+								data-splitin="words"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="600"
+								style="z-index: 2; color:rgb(193, 0, 0); font-size:50px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
+									Elevate Safety, Speed and style <br/>
+							</div>
+
+							<div class="tp-caption content_text_center skewfromleft tp-resizeme"
+								data-x="165"
+								data-y="195" 
+								data-speed="500"
+								data-start="2000"
+								data-easing="Power3.easeInOut"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="600"
+
+								style="z-index: 3; font-size:30px; color:rgb(193, 0, 0); font-weight:600; text-shadow:none;">
+									We build the safest, fastest and most stylish evelators around <br />
+							</div>
+
+							<div class="tp-caption skewfromleft tp-resizeme  un-button-2-lg"
+								data-x="265"
+								data-y="300" 
+								data-speed="300"
+								data-start="2500"
+								data-easing="Power3.easeInOut"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="300"
+
+								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
+									<a class="btn btn-blue btn-lg" href="#services">Services Offered &nbsp; <i class="fa fa-angle-right"></i></a>
+							</div>
+
+							<div class="tp-caption skewfromleft tp-resizeme  un-button-2-lg"
+								data-x="665"
+								data-y="300" 
+								data-speed="300"
+								data-start="2500"
+								data-easing="Power3.easeInOut"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="300"
+
+								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
+									<%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %> 
+							</div>
+						</li>
+						<!-- SLIDE 2 Residential Building-->
+						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off"  data-title="Residential">
+							<!-- MAIN IMAGE -->
+							<%= image_tag "images/AdobeStock_72034307.jpeg" %>
+							<div class="tp-caption white_big skewfromleft tp-resizeme"
+								data-x="165"
+								data-y="100" 
+								data-speed="400"
+								data-start="1500"
+								data-easing="Power3.easeInOut"
+								data-splitin="words"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="600"
+								style="z-index: 2; color:rgb(193, 0, 0); font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
+									Residential Building Services
+							</div>
+
+							<div class="tp-caption skewfromleft tp-resizeme  un-button-2-lg"
+								data-x="265"
+								data-y="300" 
+								data-speed="300"
+								data-start="2500"
+								data-easing="Power3.easeInOut"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="300"
+
+								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
+									<%= link_to 'Residential Service', home_residential_path, class:"btn btn-blue btn-lg " %> 
+							</div>
+						</li>
+						<!-- SLIDE 3 Corporate Buildings -->
+						<li data-transition="parallaxtotop" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" data-title="Corporate">
+							<!-- MAIN IMAGE -->
+							
+                            <%= image_tag "images/AdobeStock_3294993.jpeg"%>
+							<div class="overlay dark-4"><!-- dark overlay [0 to 9 opacity] --></div>
+
+							<div class="tp-caption font-roboto skewfromleft tp-resizeme"
+								data-x="165"
+								data-y="100" 
+								data-speed="500"
+								data-start="1500"
+								data-easing="Cubic.easeOut"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.5"
+								data-endelementdelay="0.5"
+								data-endspeed="500"
+								style="z-index: 2; color:rgb(193, 0, 0); font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
+									Corporate Building Services <br />
+							</div>
+
+							<div class="tp-caption sfb tp-resizeme"
+								data-x="265"
+								data-y="300" 
+								data-speed="500"
+								data-start="1500"
+								data-easing="Power3.easeInOut"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="500"
+								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
+									<%= link_to 'Corporate Service', home_corporate_path, class:"btn btn-blue btn-lg " %> 
+							</div>
+						</li>
+
+					</ul>
+
+				</div>
+			</div>
+			<!-- /REVOLUTION SLIDER -->
+			<hr class="m-0" /><!-- 1px line separator -->
+			<!-- Services -->
+			<section id="services">
+				<div class="container">
+
+					<div class="row">
+						<div class="col-sm-4">
+							    <%= image_tag "images/award14.webp", height: 240 , width: 360 %>	
+							</a>
+
+							<h3 class="mt-10">Awards</h3>
+							<p>Rocket Elevators has won multiple awards and medals for their outstanding designs and safety.</p>
+							
+						</div>
+
+						<div class="col-sm-4">
+							    <%= image_tag "images/Single-family_home.jfif", height: 240 , width: 360 %>	
+							</a>
+							<h3 class="mt-10">Best Residential Elevators</h3>
+							<p>We offer best inclass residential elevators for all types of homes.</p>
+							<%= link_to 'Residential Service', home_residential_path, class:"btn btn-blue btn-lg " %> 
+						</div>
+
+						<div class="col-sm-4">
+							<%= image_tag "images/AdobeStock_179073967.jpeg", height: 240 , width: 360 %>
+							<h3 class="mt-10">Corporate Elevators</h3>
+							<p>Rocket Elevators also has world class elevators for corporate buildings.</p>
+							<%= link_to 'Corporate Service', home_corporate_path, class:"btn btn-blue btn-lg " %> 
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /Services -->
+			<!-- Ribbon -->
+			<section class="parallax parallax-1" style="background-image: url('demo_files/images/AdobeStock_33298664.jpeg');">
+			
+				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+
+				<div class="container">
+
+					<div class="text-center">
+						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2>
+						 
+						<%= link_to 'Get a Quote!', home_form_path, class:"btn btn-blue btn-lg " %>  OR &nbsp; 
+						<a class="btn btn-blue btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
+					</div>
+
+				</div>
+			</section>
+			<!-- /ribbon -->
+			<!-- PORTFOLIO -->
+			<section id="portfolio>
+				<div class="container">
+
+					<div class="heading-title heading-dotted text-center">
+						<h2>Featured Portfolio</h2>
+					</div>
+
+					<div class="text-center">
+						<ul class="nav nav-pills mix-filter mb-60">
+							<li data-filter="all" class="filter active"><a href="#">All</a></li>
+							<li data-filter="development" class="filter"><a href="#">Development</a></li>
+							<li data-filter="residential" class="filter"><a href="#">Residential</a></li>
+							<li data-filter="design" class="filter"><a href="#">Design</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div id="portfolio" class="portfolio-nogutter">
+
+						<div class="row mix-grid">
+
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/Award 1.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+
+											</span>
+										</span>
+
+										<%= image_tag "images/Award 1.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Designer Award 2002</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Design</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix development"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/Award-2.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+
+											</span>
+										</span>
+
+										<%= image_tag "images/Award-2.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Best Elevator Developer 2007</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Development</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix residential"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/Award-3.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/Award-3.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Residential Builder Award 2007</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Residential</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/Award 4.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/Award 4.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Creative Design 2009</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Design</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/Award-5.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/Award-5.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Most Improved Design 2011</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Design</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix development"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/award-6.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/award-6.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Mobile Development 2011</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Development</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix residential"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/award 7.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/award 7.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Best Residential Elevators 2013</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Residential</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+
+							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/award 8.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/award 8.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Unique Elevator Award 2013</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Design</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+							<div class="col-md-3 col-sm-3 mix development"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/award-9.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/award-9.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Development Award 2015</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Development</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+							<div class="col-md-3 col-sm-3 mix residential"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/award-10.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/award-10.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Community Voted Elevator Award 2016</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Residential</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+							<div class="col-md-3 col-sm-3 mix residential"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/award-11.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/award-11.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Most Residential Installments Award 2018</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Residential</a></li>
+										</ul>
+									</div>
+
+								</div>
+
+							</div><!-- /item -->
+
+							<div class="col-md-3 col-sm-3 mix development"><!-- item -->
+
+								<div class="item-box">
+									<figure>
+										<span class="item-hover">
+											<span class="overlay dark-5"></span>
+											<span class="inner">
+
+												<!-- lightbox -->
+												<a class="ico-rounded lightbox" href="demo_files/images/award-12.jpg" data-plugin-options='{"type":"image"}'>
+													<span class="fa fa-plus fs-20"></span>
+												</a>
+											</span>
+										</span>
+
+										<%= image_tag "images/award-12.jpg", height: 271 , width: 175 %>
+									</figure>
+
+									<div class="item-box-desc">
+										<h3>Best Developer Award 2021</h3>
+										<ul class="list-inline categories m-0">
+											<li><a href="#">Development</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</section>
+			<!-- /PORTFOLIO -->
+			<!-- Ceo -->
+			<section class="section-xs dark">
+				<div class="container">
+
+					<div class="owl-carousel text-center owl-testimonial m-0" data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
+						<div class="testimonial">
+							<figure>
+								<%= image_tag "images/ceo.png", height: 176.67 , width: 265 %>
+							</figure>
+							<div class="testimonial-content p-0">
+								<p class="lead">Rocket Elevators Was Started From The Ground Up.</p>
+								<cite>
+									Eileen Ai
+									<span>CEO</span>
+								</cite>
+							</div>
+						</div>
+						<div class="testimonial">
+							<figure>
+								<%= image_tag "images/Screenshot_20220618-155158_Photos.jpg", height: 176.67 , width: 265 %>
+							</figure>
+							<div class="testimonial-content p-0">
+								<p class="lead">Single Handedly Built 87 Elevators Himself</p>
+								<cite>
+									Gianluca Ciccone
+									<span>Employee Of The Month</span>
+								</cite>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- /ceo -->
+			<!-- News -->
+			<section id="news">
+				<div class="container">
+
+					<div class="heading-title heading-dotted text-center">
+						<h2>Recent News</h2>
+
+					<div class="owl-carousel owl-padding-10 buttons-autohide controlls-over" data-plugin-options='{"singleItem": false, "items":"4", "autoPlay": 4000, "navigation": true, "pagination": false}'>
+						
+						<div class="img-hover">
+							<a href="https://toronto.ctvnews.ca/anna-kendrick-posts-video-about-toronto-elevator-rescue-1.6064190">
+								<%= image_tag "images/new1.jpg", height: 176.67 , width: 265 %>
+							</a>
+
+							<h4 class="text-left mt-20"><a href="https://toronto.ctvnews.ca/anna-kendrick-posts-video-about-toronto-elevator-rescue-1.6064190">Anna Stuck In Elevator!</a></h4>
+							<p class="text-left">Famous actress Anna Kendrick was seen stuck in an elevator this weekend.</p>
+							<ul class="text-left fs-12 list-inline list-separator">
+								<li>
+									<i class="fa fa-calendar"></i> 
+									29th Jul 2017
+								</li>
+								<li>
+									<a href="https://toronto.ctvnews.ca/anna-kendrick-posts-video-about-toronto-elevator-rescue-1.6064190">
+										<i class="fa fa-comments"></i> 
+										3
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="img-hover">
+							<a href="https://www.richmond-news.com/local-news/touchless-keypad-installed-in-richmond-elevator-4964645">
+								<%= image_tag "images/new2.jpg", height: 176.67 , width: 265 %>
+							</a>
+
+							<h4 class="text-left mt-20"><a href="https://www.richmond-news.com/local-news/touchless-keypad-installed-in-richmond-elevator-4964645">New Touchless Elevator?</a></h4>
+							<p class="text-left">Come see this revolutionary new elevator technology.</p>
+							<ul class="text-left fs-12 list-inline list-separator">
+								<li>
+									<i class="fa fa-calendar"></i> 
+									20th Jan 2022
+								</li>
+								<li>
+									<a href="https://www.richmond-news.com/local-news/touchless-keypad-installed-in-richmond-elevator-4964645">
+										<i class="fa fa-comments"></i> 
+										3
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="img-hover">
+							<a href="https://www.newswire.ca/news-releases/tk-elevator-opens-new-north-american-headquarters-as-part-of-continued-investment-in-innovation-leadership-843968470.html">
+								<%= image_tag "images/new3.jpg", height: 176.67 , width: 265 %>
+							</a>
+
+							<h4 class="text-left mt-20"><a href="https://www.newswire.ca/news-releases/tk-elevator-opens-new-north-american-headquarters-as-part-of-continued-investment-in-innovation-leadership-843968470.html">TKE New Headquarter!</a></h4>
+							<p class="text-left">TKE get brand new headquarter in North America.</p>
+							<ul class="text-left fs-12 list-inline list-separator">
+								<li>
+									<i class="fa fa-calendar"></i> 
+									3rd Dec 2002
+								</li>
+								<li>
+									<a href="https://www.newswire.ca/news-releases/tk-elevator-opens-new-north-american-headquarters-as-part-of-continued-investment-in-innovation-leadership-843968470.html">
+										<i class="fa fa-comments"></i> 
+										3
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="img-hover">
+							<a href="https://www.saanichnews.com/news/whatever-happened-to-elevator-music/">
+								<%= image_tag "images/new4.jpg", height: 176.67 , width: 265 %>
+							</a>
+
+							<h4 class="text-left mt-20"><a href="https://www.saanichnews.com/news/whatever-happened-to-elevator-music/">No More Music?</a></h4>
+							<p class="text-left">What happened to the ever popular genre of elevator music and when will it be back?</p>
+							<ul class="text-left fs-12 list-inline list-separator">
+								<li>
+									<i class="fa fa-calendar"></i> 
+									1st April 2017
+								</li>
+								<li>
+									<a href="https://www.saanichnews.com/news/whatever-happened-to-elevator-music/">
+										<i class="fa fa-comments"></i> 
+										3
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="img-hover">
+							<a href="https://www.durhamradionews.com/archives/148859">
+								<%= image_tag "images/new5.jpg", height: 176.67 , width: 265 %>
+							</a>
+							<h4 class="text-left mt-20"><a href="https://www.durhamradionews.com/archives/148859">CN Tower Glass Falls!</a></h4>
+							<p class="text-left">CN towe elevator back in action after a piece of glass fell from it.</p>
+							<ul class="text-left fs-12 list-inline list-separator">
+								<li>
+									<i class="fa fa-calendar"></i> 
+									17th Dec 2019
+								</li>
+								<li>
+									<a href="https://www.durhamradionews.com/archives/148859">
+										<i class="fa fa-comments"></i> 
+										3
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="img-hover">
+							<a href="https://www.indiatvnews.com/trending/news/world-largest-elevator-installed-in-mumbai-at-jio-world-centre-carry-200-people-together-all-details-2022-05-09-775344">
+								<%= image_tag "images/new6.jpg", height: 176.67 , width: 265 %>
+							</a>
+							<h4 class="text-left mt-20"><a href="https://www.indiatvnews.com/trending/news/world-largest-elevator-installed-in-mumbai-at-jio-world-centre-carry-200-people-together-all-details-2022-05-09-775344">Biggest Elevator Ever?</a></h4>
+							<p class="text-left">200 people can now fit in one elevator with revolutionary new elevator.</p>
+							<ul class="text-left fs-12 list-inline list-separator">
+								<li>
+									<i class="fa fa-calendar"></i> 
+									31 Oct 2020
+								</li>
+								<li>
+									<a href="https://www.indiatvnews.com/trending/news/world-largest-elevator-installed-in-mumbai-at-jio-world-centre-carry-200-people-together-all-details-2022-05-09-775344">
+										<i class="fa fa-comments"></i> 
+										3
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- /News -->
+			<!-- Clients -->
+			<section id="clients" class="alternate">
+				<div class="container">
+
+					<div class="heading-title heading-dotted text-center">
+						<h2>Our Customers</h2>
+					</div>
+
+					<ul class="row clients-dotted list-inline">
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+                                <%= image_tag "images/PNG/Manchester City.png", height: 100, width: 100 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+                                <%= image_tag "images/PNG/Kleenex.png", height: 100, width: 100 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/Febreeza.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/klein.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/cresy.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/Mrclean.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/Pappa.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/rr.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/up.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/7.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/bounty.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/chipotle.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+			</section>
+			<!-- /Clients -->
+			<!-- CONTACT -->
+			<section id="contact">
+				<div class="container">
+
+					<header class="text-center mb-60">
+						<h2>Contact Us</h2>
+						<p class="lead font-lato">Hear Back From Us Faster Than Our Elevators</p>
+						<hr />
+					</header>
+
+
+					<div class="row">
+						<!-- FORM -->
+						<div class="col-md-8 col-sm-8">
+
+							<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
+							<!-- Alert Success -->
+							<div id="alert_success" class="alert alert-success mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Thank You!</strong> Your message successfully sent!
+							</div><!-- /Alert Success -->
+
+
+							<!-- Alert Failed -->
+							<div id="alert_failed" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>[SMTP] Error!</strong> Internal server error!
+							</div><!-- /Alert Failed -->
+
+
+							<!-- Alert Mandatory -->
+							<div id="alert_mandatory" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+							</div><!-- /Alert Mandatory -->
+
+
+							<form action="php/contact.php" method="post" enctype="multipart/form-data">
+								<fieldset>
+									<input type="hidden" name="action" value="contact_send" />
+
+									<div class="row">
+											<div class="col-md-4">
+												<label for="contact:name">Full Name*</label>
+												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:email">Business Name</label>
+												<input required type="text" value="" class="form-control" name="contact[email][required]" id="contact:email">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:phone">Phone*</label>
+												<input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-4">
+												<label for="contact:subject">Email*</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+											</div>
+											<div class="col-md-4">
+												<label for="contact:subject">Project Name</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+											</div>
+											<div class="col-md-4">
+												<label for="contact_department">Department*</label>
+												<select class="form-control pointer" name="contact[department]">
+													<option value="">--- Select ---</option>
+													<option value="Marketing">Residential</option>
+													<option value="Webdesign">Corporate</option>
+												</select>
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-6">
+												<label for="contact:message">Project Description</label>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
+											</div>
+											<div class="col-md-6">
+												<label for="contact:message">Message*</label>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
+											</div>
+									</div>
+									<div class="row">
+											<div class="col-md-12">
+												<label for="contact:attachment">File Attachment</label>
+
+												<!-- custom file upload -->
+												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
+												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+
+											</div>
+									</div>
+
+								</fieldset>
+
+								<div class="row">
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-blue"><i class="fa fa-check"></i> SEND MESSAGE</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+						<!-- /FORM -->
+						<!-- INFO -->
+						<div class="col-md-4 col-sm-4">
+
+							<h2>Visit Us</h2>
+							<iframe
+								width="400"
+								height="450"
+								style="border:0"
+								loading="lazy"
+								allowfullscreen
+								referrerpolicy="no-referrer-when-downgrade"
+								src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBarDqKjKppyISZpjqIi5CKxGJwTea_3vs
+									&q=4468-Rue-Wellington,Verdun-QC">
+							</iframe>
+
+							<hr />
+
+							<p>
+								<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> Wellington, Verdun, Canada</span>
+								<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:1800-555-1234" class="text-blue">1(800)-555-1234</a></span>
+								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:mail@yourdomain.com" class="text-blue">support@rocketelevators.com</a></span>
+							</p>
+
+						</div>
+						<!-- /INFO -->
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /CONTACT -->
+			<!-- FOOTER -->
+			<footer id="footer">
+				<div class="container">
+
+
+					<div class="row">
+
+						<!-- col #1 -->
+						<div class="col-md-8">
+
+							<h3 class="letter-spacing-1">WHY US?</h3>
+
+							<!-- Small Description -->
+							<p>
+								Rocket Elevators has been making world class elevators for almost 50 years, and with no plans to stop, just like our elevators we're going to the top.
+							</p>
+							<h2>1(800)-555-1234</h2>
+						</div>
+						<!-- /col #1 -->
+
+						<!-- col #2 -->
+						<div class="col-md-4">
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+							<!-- Newsletter Form -->
+							<p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+									<span class="input-group-btn">
+										<button class="btn btn-danger" type="submit">Subscribe</button>
+									</span>
+								</div>
+							</form>
+							<!-- /Newsletter Form -->
+
+
+						</div>
+						<!-- /col #2 -->
+
+					</div>
+
+
+				</div>
+
+				<div class="copyright">
+					<div class="container">
+						<ul class="float-right m-0 list-inline mobile-block">
+							<li><a href="#">Terms &amp; Conditions</a></li>
+							<li>&bull;</li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+						&copy; All Rights Reserved, Company LTD
+					</div>
+				</div>
+
+			</footer>
+			<!-- /FOOTER -->
+
+		</div>
+		<!-- /wrapper -->
+
+
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
+
+
+		<!-- PRELOADER -->
+		<div id="preloader">
+			<div class="inner">
+				<span class="loader"></span>
+			</div>
+		</div><!-- /PRELOADER -->
+
+
+		<!-- JAVASCRIPT FILES -->
+		<script>var plugin_path = 'assets/plugins/';</script>
+		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+
+		<script src="assets/js/scripts.js"></script>
+
+		<!-- REVOLUTION SLIDER -->
+		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="assets/js/view/demo.revolution_slider.js"></script>
+
+		<!-- PAGELEVEL SCRIPTS -->
+		<script src="assets/js/contact.js"></script>
+
+		<!-- 
+			GMAP.JS 
+			http://hpneo.github.io/gmaps/
+		-->
+		<script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
+		<script src="assets/plugins/gmaps.js"></script>
+		<script>
+
+			jQuery(document).ready(function(){
+
+				/**
+					@BASIC GOOGLE MAP
+				**/
+				var map2 = new GMaps({
+					div: '#map2',
+					lat: -12.043333,
+					lng: -77.028333,
+					scrollwheel: false
+				});
+
+				var marker = map2.addMarker({
+					lat: -12.043333,
+					lng: -77.028333,
+					title: 'Company, Inc.'
+				});
+
+			});
+
+		</script>
+	</body>
+</html>
