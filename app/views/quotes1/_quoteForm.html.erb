@@ -171,7 +171,7 @@
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
-									<dic class="row">
+									<div class="row">
                                         <div class="col-md-4">
                                             <label for="buildingType">Building Type*</label>
                                             <select id="buildingType" class="form-control">
@@ -182,7 +182,7 @@
                                                 <option value="hybrid" id="hybrid">Hybrid</option>
                                             </select>
                                         </div>
-                                    </dic>
+                                    </div>
 									<%= form_for(buildingType, html: {class: 'hideme'}) do |form| %>
                                 	<div class="hideme">
                                     	<div class="row" id="residential-row">

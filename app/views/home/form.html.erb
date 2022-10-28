@@ -1,17 +1,12 @@
-  <head>
+<head>
     <title>RocketElevatorGroupWebsite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %>
-
     <%= stylesheet_link_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_include_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -144,23 +139,23 @@
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
-									<dic class="row">
+									<div class="row">
                                         <div class="col-md-4">
                                             <label for="buildingType">Building Type*</label>
                                             <select id="buildingType" class="form-control">
                                                 <option value="select" id="select">--Select--</option>
-                                                <option value="residential" id="residential">Residential</option>
-                                                <option value="commercial" id="commercial">Commercial</option>
-                                                <option value="corporate" id="corporate">Corporate</option>
-                                                <option value="hybrid" id="hybrid">Hybrid</option>
+                                                <option name = "residential_type" value="residential" id="residential">Residential</option>
+                                                <option name= "commercial_type" value="commercial" id="commercial">Commercial</option>
+                                                <option name="corporate_type" value="corporate" id="corporate">Corporate</option>
+                                                <option name="hybrid_type" value="hybrid" id="hybrid">Hybrid</option>
                                             </select>
                                         </div>
-                                    </dic>
+                                    </div>
                                 	<div class="hideme">
                                     	<div class="row" id="residential-row">
                                             <div class="col-md-4">
                                                 <label for="residential-apartment">Number Of Apartments In The Building</label>
-                                                <input type="number" class="form-control" id="residential-apartment" placeholder="Number Of Apartments" >
+                                                <input name="residential_apartment" type="number" class="form-control" id="residential-apartment" placeholder="Number Of Apartments" >
                                             </div>
                                             <div class="col-md-4">
                                                 <label for="residential-floor">Number Of Floors, Excluding Basements</label>
