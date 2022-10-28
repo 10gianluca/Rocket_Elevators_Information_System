@@ -8,8 +8,7 @@ gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
-#gem 'puma', '~> 4.3.11'
-gem 'puma', '~> 5.1' 
+gem 'puma', '~> 4.3.11'
 # Use SCSS for stylesheets
 gem 'bootstrap', '~>4.0.0'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -56,7 +55,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.2'
   gem 'capistrano-rails', '~> 1.4', require: false
   gem 'capistrano-bundler', '>= 1.1.0'
-  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano3-puma', '5.2.0'
   gem 'ed25519', '>= 1.2', '< 2.0'
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 end

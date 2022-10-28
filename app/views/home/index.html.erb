@@ -275,14 +275,15 @@
 							</a>
 							<h3 class="mt-10">Best Residential Elevators</h3>
 							<p>We offer best inclass residential elevators for all types of homes.</p>
-							<a href="residential.html" class="btn btn-default">Residential Details</a>
+							<%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %> 
 						</div>
 
 						<div class="col-sm-4">
 							<%= image_tag "images/AdobeStock_179073967.jpeg", height: 240 , width: 360 %>
 							<h3 class="mt-10">Corporate Elevators</h3>
 							<p>Rocket Elevators also has world class elevators for corporate buildings.</p>
-							<a href="Corporate.html" class="btn btn-default">Corporate Details</a>
+							<%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %> 
+
 						</div>
 
 					</div>
@@ -297,9 +298,8 @@
 				<div class="container">
 
 					<div class="text-center">
-						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2>
-						<a class="btn btn-default btn-lg" href="form.html">Request A Quote <i class="fa fa-angle-right"></i></a> 
-						&nbsp; OR &nbsp; 
+						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2> 
+						<%= link_to 'Request A Quote', home_form_path, class:"btn btn-blue btn-lg " %> 
 						<a class="btn btn-blue btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
 					</div>
 
