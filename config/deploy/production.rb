@@ -8,7 +8,7 @@ server "15.222.44.2", user: "ubuntu", roles: %w{app db web}
 # server "db.example.com", user: "deploy", roles: %w{db}
 app = ENV['APP']
 if app.nil? or app.empty?
-  app = "Gianluca_Ciccone" 
+  app = "GianlucaCiccone" 
 end
 set :branch, proc { `git rev-parse --abbrev-ref main`.chomp }
 set :application, app
