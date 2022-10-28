@@ -50,55 +50,7 @@
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 				<!-- TOP NAV -->
 				<header id="topNav">
-					<div class="container">
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
-						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
-							<%= image_tag "R2.png" %>
-						</a>
-						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-							<nav class="nav-main">
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active">
-										<!-- HOME -->
-										<a href="#top">
-											HOME
-										</a>
-									</li>
-									<li><!-- SERVICES -->
-										<a href="#services">
-											SERVICES
-										</a>
-									</li>
-									<li><!-- Portfolio -->
-										<a href="#portfolio">
-											PORTFOLIO
-										</a>
-									</li>
-									<li><!-- NEWS -->
-										<a href="#news">
-											NEWS
-										</a>
-									</li>
-									<li><!-- CLIENTS -->
-										<a href="#clients">
-											CLIENTS
-										</a>
-									</li>
-									<li><!-- CONTACT -->
-										<a href="#contact">
-											CONTACT
-										</a>
-									</li>
-								</ul>
-
-							</nav>
-						</div>
-
-					</div>
+					<%= render 'user/session_manager' %>
 				</header>
 				<!-- /Top Nav -->
 			</div>
@@ -172,7 +124,7 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %> 
+									<%# <%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %>  %>
 							</div>
 						</li>
 						<!-- SLIDE 2 Residential Building-->
@@ -208,7 +160,7 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %>
+									<%# <%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %> %>
 							</div>
 						</li>
 						<!-- SLIDE 3 Corporate Buildings -->
@@ -245,7 +197,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-									<%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %> 
+									<%# <%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %>  %>
 									
 							</div>
 						</li>
