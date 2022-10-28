@@ -183,119 +183,166 @@
                                             </select>
                                         </div>
                                     </dic>
+									<%= form_for(buildingType, html: {class: 'hideme'}) do |form| %>
                                 	<div class="hideme">
                                     	<div class="row" id="residential-row">
                                             <div class="col-md-4">
-                                                <label for="residential-apartment">Number Of Apartments In The Building</label>
-                                                <input type="number" class="form-control" id="residential-apartment" placeholder="Number Of Apartments" >
+												<%=form.label :Number_Of_Apartments_In_The_Building %>
+												<%=form.text_field :number_of_apartments_in_the_building, class: "form-control" %>
+            
                                             </div>
                                             <div class="col-md-4">
-                                                <label for="residential-floor">Number Of Floors, Excluding Basements</label>
-                                                <input type="number" class="form-control" id="residential-floor" placeholder="Number Of Floors" >
+												<%=form.label :Number_Of_Floors_In_The_Building %>
+												<%=form.text_field :number_of_floors_in_the_building, class: "form-control" %>
+                                                
                                             </div>
 											<div class="col-md-4">
-												<label for="residential-basement">Number Of Basements Contained In The Building</label>
-												<input type="number" class="form-control" id="residential-basement" placeholder="Number Of Basements" >
+												<%=form.label :Number_Of_Basements_In_The_Building %>
+												<%=form.text_field :number_of_basements_in_the_building, class: "form-control" %>
+												
+											</div>
+										</div>
+										<div class="row" id="commercial-row">
+											<div class="col-md-4">
+												<%=form.label :Number_Of_Basement_Contained_In_The_Building %>
+												<%=form.text_field :number_of_basement_contained_in_the_building, class: "form-control" %>
+												
 											</div>
 										</div>
                                         <div class="row" id="commercial-row">
                                             <div class="col-md-4">
-                                                <label for="commercial-business">Number Of Distinct Businesses</label>
-                                                <input type="number" class="form-control" id="commercial-business" placeholder="Number Of Businesses" >
+												<%=form.label :Number_Of_Businesses_In_The_Building %>
+												<%=form.text_field :number_of_businesses_in_the_building, class: "form-control" %>
+                                                
                                             </div>
                                             <div class="col-md-4">
-                                                <label for="commercial-floor">Number Of Floors, Excluding Basements</label>
-                                                <input type="number" class="form-control" id="commercial-floor" placeholder="Number Of Floors" >
+												<%=form.label :Number_Of_Floors_In_The_Building %>
+												<%=form.text_field :number_of_floors_in_the_building, class: "form-control" %>
+                                                
                                             </div>
 											<div class="col-md-4">
-												<label for="commercial-basement">Number Of Basements Contained In The Building</label>
-												<input type="number" class="form-control" id="commercial-basement" placeholder="Number Of Basements" >
+												<%=form.label :Number_Of_Basements_In_The_Building %>
+												<%=form.text_field :number_of_basements_in_the_building, class: "form-control" %>
+												
 											</div>
                                             <div class="col-md-4">
-												<label for="commercial-parking">Number Of Parking Space Available</label>
-												<input type="number" class="form-control" id="commercial-parking" placeholder="Number Of Parking Spaces" >
+												<%=form.label :Number_Of_Parking_Spaces_In_The_Building %>
+												<%=form.text_field :number_of_parking_spaces_in_the_building, class: "form-control" %>
+												
 											</div>
+											
                                             <div class="col-md-4">
-												<label for="commercial-cage">Number Of Elevator Cages To Be Deployed</label>
-												<input type="number" class="form-control" id="commercial-cage" placeholder="Number Of Cages" >
+												<%=form.label :Number_Of_Elevator_Cages_To_Be_Deployed %>
+												<%=form.text_field :number_of_elevator_cages_to_be_deployed, class: "form-control" %>
+												
 											</div>
 									    </div>
 										<div class="row" id="corporate-row">
 											<div class="col-md-4">
-												<label for="corporate-companie">Number Of Separate Tenant Companies</label>
-												<input type="number" class="form-control" id="corporate-companie" placeholder="Number Of Companies" >
+												<%=form.label :Number_Of_Businesses_In_The_Building %>
+												<%=form.text_field :number_of_businesses_in_the_building, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="corporate-floor">Number Of Floors, Excluding Basements</label>
-												<input type="number" class="form-control" id="corporate-floor" placeholder="Number Of Floors">
+												<%=form.label :Number_Of_Floors_In_The_Building %>
+												<%=form.text_field :number_of_floors_in_the_building, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="corporate-basement">Number Of Basements Contained In The Building</label>
-												<input type="number" class="form-control" id="corporate-basement" placeholder="Number Of Basements" >
+												<%=form.label :Number_Of_Basements_In_The_Building %>
+												<%=form.text_field :number_of_basements_in_the_building, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="corporate-parking">Number Of Parking Spaces Available</label>
-												<input type="number" class="form-control" id="corporate-parking" placeholder="Parking Spaces" >
+												<%=form.label :Number_Of_Parking_Spaces_In_The_Building %>
+												<%=form.text_field :number_of_parking_spaces_in_the_building, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="corporate-occupant">Maximum Number Of Occupants Per Floor</label>
-												<input type="number" class="form-control" id="corporate-occupant" placeholder="Occupants Per Floor" >
+												<%=form.label :Maximum_Number_Of_Occupants_Per_Floor %>
+												<%=form.text_field :maximum_number_of_occupants_per_floor, class: "form-control" %>
+												
 											</div>
 										</div>
 										<div class="row" id="hybrid-row">
 											<div class="col-md-4">
-												<label for="hybrid-business">Number Of Distinct Businesses</label>
-												<input type="number" class="form-control" id="hybrid-business" placeholder="Number Of Businesses" >
+												<%=form.label :Number_Of_Businesses_In_The_Building %>
+												<%=form.text_field :number_of_businesses_in_the_building, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="hybrid-floor">Number Of Floors, Excluding Basements</label>
-												<input type="number" class="form-control" id="hybrid-floor" placeholder="Number Of Floors" >
+												<%=form.label :Number_Of_Floors_In_The_Building %>
+												<%=form.text_field :number_of_floors_in_the_building, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="hybrid-basement">Number Of Basements Contained In The Building</label>
-												<input type="number" class="form-control" id="hybrid-basement" placeholder="Number Of Basements" >
+												<%=form.label :Number_Of_Basements_In_The_Building %>
+												<%=form.text_field :number_of_basements_in_the_building, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="hybrid-parking">Number Of Parking Spaces Available</label>
-												<input type="number" class="form-control" id="hybrid-parking" placeholder="Parking Spaces" >
+												<%=form.label :Number_Of_Parking_Spaces_In_The_Building %>
+												<%=form.text_field :number_of_parking_spaces_in_the_building, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="hybrid-occupant">Maximum Number Of Occupants Per Floor</label>
-												<input type="number" class="form-control" id="hybrid-occupant" placeholder="Occupants Per Floor" >
+												<%=form.label :Maximum_Number_Of_Occupants_Per_Floor %>
+												<%=form.text_field :maximum_number_of_occupants_per_floor, class: "form-control" %>
+												
 											</div>
 											<div class="col-md-4">
-												<label for="hybrid-hour">Number Of Hours Of Activity Of The Building (Max: 24)</label>
-												<input type="number" class="form-control" id="Hybrid-hour" placeholder="Active Hours (Max:24)" >
+												<%=form.label :Number_Of_Hours_Of_Activity %>
+												<%=form.text_field :number_of_hours_of_activity, class: "form-control" %>
+												
 											</div>
 										</div>
 									<div class="answer">
 										<div class="row" id="cage-row">
 											<div class="col-md-4">
-												<label for="cage-amount">Number Of Cages</label>
-												<input type="number" class="form-control" id="cage-amount" style="width: 230px" placeholder="Number Of Cages" disabled="">  
+												<%=form.label :Number_Of_Cages %>
+												<%=form.text_field :number_of_cages, class: "form-control" %>
+												 
 											</div> 
 										</div>
 										<label>Select Quality:</label>
-										<input type="radio" id="standard" value="standard" name="radio-btn"<label for="standard" class="light">Standard</label>
-										<input type="radio" id="premium" value="premium" name="radio-btn"<label for="premium" class="light">Premium</label>
-										<input type="radio" id="excelium" value="excelium" name="radio-btn"<label for="excelium" class="light">Excelium</label>
+										<div class="row" id="standard-row">
+											<div class="col-md-4">
+												<%=form.label :Standard %>
+												<%=form.radio_button :quality, "Standard", class: "form-control" %>
+												
+											</div>
+											<div class="col-md-4">
+												<%=form.label :Premium %>
+												<%=form.radio_button :quality, "Premium", class: "form-control" %>
+												
+											</div>
+											<div class="col-md-4">
+												<%=form.label :Excelium %>
+												<%=form.radio_button :quality, "Excelium", class: "form-control" %>
+												
+											</div>
+										</div>
 									
 										<div class="row" id="cage-row">
 											<div class="col-md-4">
-												<label for="priceElevator">Unit Price Of Elevator</label>
-												<input type="text" class="form-control" id="priceElevator" style="width: 230px" placeholder="Unit Price Of Elevator" disabled="">  
+												<%=form.label :Unit_Price_Of_Elevator %>
+												<%=form.text_field :unit_price_of_elevator, class: "form-control" %>
+												
 											</div> 
 											<div class="col-md-4">
-												<label for="totalPric">Total Price Of Each Elevator</label>
-												<input type="text" class="form-control" id="totalPrice" style="width: 230px" placeholder="Total Price Of Elevator" disabled="">  
+												<%=form.label :Total_Price_Of_Elevator %>
+												<%=form.text_field :total_price_of_elevator, class: "form-control" %>
+												
 											</div> 
 											<div class="col-md-4">
-												<label for="fee">Installation Fees</label>
-												<input type="text" class="form-control" id="fee" style="width: 230px" placeholder="Installation Fees" disabled="">  
+												<%=form.label :Installation_Fees %>
+												<%=form.text_field :installation_fees, class: "form-control" %>
+												 
 											</div> 
 											<div class="col-md-4">
-												<label for="finlPrice">Final Price</label>
-												<input type="text" class="form-control" id="finlPrice"a style="width: 230px" placeholder="Final Price" disabled="">  
+												<%=form.label :Total_Price_Of_Elevator_With_Installation_Fees %>
+												<%=form.text_field :total_price_of_elevator_with_installation_fees, class: "form-control" %>
+												 
 											</div> 
 										</div>
 									
@@ -307,7 +354,8 @@
 
 								<div class="row">
 									<div class="col-md-4">
-										<button type="submit" class="btn btn-blue"><i class="fa fa-check"></i> Get Quote</button>
+										<%=form.submit "Submit", class: "btn btn-primary" %>
+								
 									</div>
 								</div>
 							</form>
