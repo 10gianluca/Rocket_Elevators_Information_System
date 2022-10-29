@@ -32,12 +32,89 @@
 	</head>
 	<body class="smoothscroll enable-animation">
 
+		<!-- SLIDE TOP -->
+		<div id="slidetop">
+
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-4">
+						<h6><i class="icon-heart"></i> Rocket Elevators</h6>
+						<p>Elevate Safety, Speed and style</p>
+					</div>
+
+					<div class="col-md-4">
+						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+						<ul class="list-unstyled">
+							<li><b>Address:</b> <br /> Wellington, Verdun, Canada</li>
+							<li><b>Phone:</b> 1(800)-555-1234</li>
+							<li><b>Email:</b> <a href="mailto:support@yourname.com">support@rocketelevators.com</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+
+		</div>
+		<!-- /SLIDE TOP -->
 		<!-- wrapper -->
 		<div id="wrapper">
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 				<!-- TOP NAV -->
 				<header id="topNav">
-					<%= render 'user/session_manager' %>
+					<div class="container">
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+						<!-- Logo -->
+						<a class="logo float-left scrollTo" href="#top">
+						    <%= image_tag "R2.png" %>	
+						</a>
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li class="active">
+										<!-- HOME -->
+										<a href="#top">
+											HOME
+										</a>
+									</li>
+									<li><!-- SERVICES -->
+										<a href="#services">
+											SERVICES
+										</a>
+									</li>
+									<li><!-- Portfolio -->
+										<a href="#portfolio">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a href="#news">
+											NEWS
+										</a>
+									</li>
+									<li><!-- CLIENTS -->
+										<a href="#clients">
+											CLIENTS
+										</a>
+									</li>
+									<li><!-- CONTACT -->
+										<a href="#contact">
+											CONTACT
+										</a>
+									</li>
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
 				</header>
 				<!-- /Top Nav -->
 			</div>
@@ -49,7 +126,7 @@
 						<!-- SLIDE 1 Slogan  -->
 						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off"  data-title="Rocket Elevators">
 							<!-- MAIN IMAGE -->
-							<%= image_tag "images/AdobeStock_103570025.jpeg"%>
+                            <%= image_tag "images/AdobeStock_103570025.jpeg"%>
 							<div class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="165"
 								data-y="100" 
@@ -94,7 +171,7 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<a class="btn btn-blue btn-lg" href="#services">Services Offered</a>
+									<a class="btn btn-blue btn-lg" href="#services">Services Offered &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 
 							<div class="tp-caption skewfromleft tp-resizeme  un-button-2-lg"
@@ -110,7 +187,7 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %> 
+									<%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %> &nbsp; <a class="fa fa-angle-right"></a>
 							</div>
 						</li>
 						<!-- SLIDE 2 Residential Building-->
@@ -145,7 +222,7 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-								<%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %>
+									<a class="btn btn-blue btn-lg" href="residential.html">Residential Details &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 						<!-- SLIDE 3 Corporate Buildings -->
@@ -182,8 +259,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-									<<%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %>  
-									
+									<a class="btn btn-default btn-lg" href="Corporate.html">Corporate Details &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 
@@ -192,7 +268,7 @@
 				</div>
 			</div>
 			<!-- /REVOLUTION SLIDER -->
-            <hr class="m-0" />
+			<hr class="m-0" /><!-- 1px line separator -->
 			<!-- Services -->
 			<section id="services">
 				<div class="container">
@@ -204,7 +280,7 @@
 
 							<h3 class="mt-10">Awards</h3>
 							<p>Rocket Elevators has won multiple awards and medals for their outstanding designs and safety.</p>
-							<a href="#portfolio" class="btn btn-blue btn-lg">The Awards</a>
+							<a href="#portfolio" class="btn btn-default">The Awards</a>
 						</div>
 
 						<div class="col-sm-4">
@@ -212,32 +288,31 @@
 							</a>
 							<h3 class="mt-10">Best Residential Elevators</h3>
 							<p>We offer best inclass residential elevators for all types of homes.</p>
-							<%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %> 
+							<a href="residential.html" class="btn btn-default">Residential Details</a>
 						</div>
 
 						<div class="col-sm-4">
 							<%= image_tag "images/AdobeStock_179073967.jpeg", height: 240 , width: 360 %>
 							<h3 class="mt-10">Corporate Elevators</h3>
 							<p>Rocket Elevators also has world class elevators for corporate buildings.</p>
-							<%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %> 
-
+							<a href="Corporate.html" class="btn btn-default">Corporate Details</a>
 						</div>
 
 					</div>
 
 				</div>
 			</section>
+			<!-- /Services -->
 			<!-- Ribbon -->
-			<section class="parallax parallax-1" style="background-image: url('demo_files/images/AdobeStock_33298664.jpeg');">
-			
+			<section class="" style="background-image: url('demo_files/images/AdobeStock_33298664.jpeg');">
 				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
 
 				<div class="container">
 
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2>
-						 
-						<%= link_to 'Get a Quote!', home_form_path, class:"btn btn-blue btn-lg " %>  OR &nbsp; 
+						<a class="btn btn-default btn-lg" href="form.html">Request A Quote <i class="fa fa-angle-right"></i></a> 
+						&nbsp; OR &nbsp; 
 						<a class="btn btn-blue btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
 					</div>
 
@@ -632,7 +707,7 @@
 					<div class="owl-carousel text-center owl-testimonial m-0" data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
 						<div class="testimonial">
 							<figure>
-								<%= image_tag "images/ceo.png", height: 176.67 , width: 265 %>
+								<%= image_tag "images/ceo.jpg", height: 176.67 , width: 265 %>
 							</figure>
 							<div class="testimonial-content p-0">
 								<p class="lead">Rocket Elevators Was Started From The Ground Up.</p>
@@ -644,7 +719,7 @@
 						</div>
 						<div class="testimonial">
 							<figure>
-								<%= image_tag "images/Screenshot_20220618-155158_Photos.jpg", height: 176.67 , width: 265 %>
+								<%= image_tag "images/ceo.jpg", height: 176.67 , width: 265 %>
 							</figure>
 							<div class="testimonial-content p-0">
 								<p class="lead">Single Handedly Built 87 Elevators Himself</p>
@@ -670,7 +745,7 @@
 						
 						<div class="img-hover">
 							<a href="https://toronto.ctvnews.ca/anna-kendrick-posts-video-about-toronto-elevator-rescue-1.6064190">
-								<%= image_tag "images/new1.jpg", height: 176.67 , width: 265 %>
+								<%= image_tag "images/news-1.jpg", height: 176.67 , width: 265 %>
 							</a>
 
 							<h4 class="text-left mt-20"><a href="https://toronto.ctvnews.ca/anna-kendrick-posts-video-about-toronto-elevator-rescue-1.6064190">Anna Stuck In Elevator!</a></h4>
@@ -691,7 +766,7 @@
 
 						<div class="img-hover">
 							<a href="https://www.richmond-news.com/local-news/touchless-keypad-installed-in-richmond-elevator-4964645">
-								<%= image_tag "images/new2.jpg", height: 176.67 , width: 265 %>
+								<%= image_tag "images/news-2.jpg", height: 176.67 , width: 265 %>
 							</a>
 
 							<h4 class="text-left mt-20"><a href="https://www.richmond-news.com/local-news/touchless-keypad-installed-in-richmond-elevator-4964645">New Touchless Elevator?</a></h4>
@@ -712,7 +787,7 @@
 
 						<div class="img-hover">
 							<a href="https://www.newswire.ca/news-releases/tk-elevator-opens-new-north-american-headquarters-as-part-of-continued-investment-in-innovation-leadership-843968470.html">
-								<%= image_tag "images/new3.jpg", height: 176.67 , width: 265 %>
+								<%= image_tag "images/news-3.jpg", height: 176.67 , width: 265 %>
 							</a>
 
 							<h4 class="text-left mt-20"><a href="https://www.newswire.ca/news-releases/tk-elevator-opens-new-north-american-headquarters-as-part-of-continued-investment-in-innovation-leadership-843968470.html">TKE New Headquarter!</a></h4>
@@ -732,7 +807,7 @@
 						</div>
 						<div class="img-hover">
 							<a href="https://www.saanichnews.com/news/whatever-happened-to-elevator-music/">
-								<%= image_tag "images/new4.jpg", height: 176.67 , width: 265 %>
+								<%= image_tag "images/news-4.jpg", height: 176.67 , width: 265 %>
 							</a>
 
 							<h4 class="text-left mt-20"><a href="https://www.saanichnews.com/news/whatever-happened-to-elevator-music/">No More Music?</a></h4>
@@ -752,7 +827,7 @@
 						</div>
 						<div class="img-hover">
 							<a href="https://www.durhamradionews.com/archives/148859">
-								<%= image_tag "images/new5.jpg", height: 176.67 , width: 265 %>
+								<%= image_tag "images/news-5.jpg", height: 176.67 , width: 265 %>
 							</a>
 							<h4 class="text-left mt-20"><a href="https://www.durhamradionews.com/archives/148859">CN Tower Glass Falls!</a></h4>
 							<p class="text-left">CN towe elevator back in action after a piece of glass fell from it.</p>
@@ -772,7 +847,7 @@
 
 						<div class="img-hover">
 							<a href="https://www.indiatvnews.com/trending/news/world-largest-elevator-installed-in-mumbai-at-jio-world-centre-carry-200-people-together-all-details-2022-05-09-775344">
-								<%= image_tag "images/new6.jpg", height: 176.67 , width: 265 %>
+								<%= image_tag "images/news-6.jpg", height: 176.67 , width: 265 %>
 							</a>
 							<h4 class="text-left mt-20"><a href="https://www.indiatvnews.com/trending/news/world-largest-elevator-installed-in-mumbai-at-jio-world-centre-carry-200-people-together-all-details-2022-05-09-775344">Biggest Elevator Ever?</a></h4>
 							<p class="text-left">200 people can now fit in one elevator with revolutionary new elevator.</p>
@@ -804,63 +879,63 @@
 
 					<ul class="row clients-dotted list-inline">
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
+							<a href="#">
                                 <%= image_tag "images/PNG/Manchester City.png", height: 100, width: 100 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
+							<a href="#">
                                 <%= image_tag "images/PNG/Kleenex.png", height: 100, width: 100 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
+							<a href="#">
 								<%= image_tag "images/PNG/Febreeza.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
+							<a href="#">
 								<%= image_tag "images/PNG/klein.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
-								<%= image_tag "images/PNG/cresy.png", height: 182.5 , width: 282.5 %>
+							<a href="#">
+								<%= image_tag "images/PNG/airwick.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
-								<%= image_tag "images/PNG/Mrclean.png", height: 182.5 , width: 282.5 %>
+							<a href="#">
+								<%= image_tag "images/PNG/airwick.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
-								<%= image_tag "images/PNG/Pappa.png", height: 182.5 , width: 282.5 %>
+							<a href="#">
+								<%= image_tag "images/PNG/airwick.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
-								<%= image_tag "images/PNG/rr.png", height: 182.5 , width: 282.5 %>
+							<a href="#">
+								<%= image_tag "images/PNG/airwick.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
-								<%= image_tag "images/PNG/up.png", height: 182.5 , width: 282.5 %>
+							<a href="#">
+								<%= image_tag "images/PNG/airwick.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
-								<%= image_tag "images/PNG/7.png", height: 182.5 , width: 282.5 %>
+							<a href="#">
+								<%= image_tag "images/PNG/airwick.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
-								<%= image_tag "images/PNG/bounty.png", height: 182.5 , width: 282.5 %>
+							<a href="#">
+								<%= image_tag "images/PNG/airwick.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a>
-								<%= image_tag "images/PNG/chipotle.png", height: 182.5 , width: 282.5 %>
+							<a href="#">
+								<%= image_tag "images/PNG/airwick.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 					</ul>
@@ -1069,8 +1144,6 @@
 		<!-- /wrapper -->
 
 
-<<<<<<< HEAD
-=======
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
 
@@ -1083,7 +1156,6 @@
 		</div><!-- /PRELOADER -->
 
 
->>>>>>> ace9964b788fbd8b9b2be7f82362c6ebd6e220a7
 		<!-- JAVASCRIPT FILES -->
 		<script>var plugin_path = 'assets/plugins/';</script>
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
@@ -1098,8 +1170,6 @@
 		<!-- PAGELEVEL SCRIPTS -->
 		<script src="assets/js/contact.js"></script>
 
-<<<<<<< HEAD
-=======
 		<!-- 
 			GMAP.JS 
 			http://hpneo.github.io/gmaps/
@@ -1128,7 +1198,6 @@
 
 			});
 
->>>>>>> ace9964b788fbd8b9b2be7f82362c6ebd6e220a7
 		</script>
 	</body>
 </html>

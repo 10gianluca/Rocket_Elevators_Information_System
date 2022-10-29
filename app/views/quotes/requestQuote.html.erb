@@ -1,0 +1,350 @@
+<head>
+    <title>RocketElevatorGroupWebsite</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %>
+    <%= stylesheet_link_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+<!-- SLIDE TOP -->
+		<div id="slidetop">
+
+			<div class="container">
+				
+				<div class="row">
+
+					<div class="col-md-4">
+						<h6><i class="icon-heart"></i> Rocket Elevators</h6>
+						<p>Elevate Safety, Speed and style</p>
+					</div>
+
+					<div class="col-md-4">
+						<h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+						<ul class="list-unstyled">
+							<li><b>Address:</b> <br /> Wellington, Verdun, Canada</li>
+							<li><b>Phone:</b> 1(800)-555-1234</li>
+							<li><b>Email:</b> <a href="mailto:support@yourname.com">support@rocketelevators.com</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
+
+		</div>
+		<!-- /SLIDE TOP -->
+		<!-- wrapper -->
+		<div id="wrapper">
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+						<!-- Logo -->
+						<a class="logo float-left scrollTo" href="#top">
+							<%= image_tag "R2.png" %>
+						</a>
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li class="active">
+										<!-- HOME -->
+										<a href="#top">
+											HOME
+										</a>
+									</li>
+									<li><!-- SERVICES -->
+										<a href="#services">
+											SERVICES
+										</a>
+									</li>
+									<li><!-- Portfolio -->
+										<a href="#portfolio">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a href="#news">
+											NEWS
+										</a>
+									</li>
+									<li><!-- CLIENTS -->
+										<a href="#clients">
+											CLIENTS
+										</a>
+									</li>
+									<li><!-- CONTACT -->
+										<a href="#contact">
+											CONTACT
+										</a>
+									</li>
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+			</div>
+			<!-- CONTACT -->
+			<section id="contact">
+				<div class="container">
+
+					<header class="text-center mb-60">
+						<h2>Quote Form</h2>
+						<p class="lead font-lato">Get a free estimate</p>
+						<hr />
+					</header>
+
+
+					<div class="row">
+
+						<!-- FORM -->
+						<div class="col-md-8 col-sm-8">
+
+							<h3>Please fill information <strong><em></em></strong></h3>
+							<!-- Alert Success -->
+							<div id="alert_success" class="alert alert-success mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Thank You!</strong> Your message successfully sent!
+							</div><!-- /Alert Success -->
+
+
+							<!-- Alert Failed -->
+							<div id="alert_failed" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>[SMTP] Error!</strong> Internal server error!
+							</div><!-- /Alert Failed -->
+
+
+							<!-- Alert Mandatory -->
+							<div id="alert_mandatory" class="alert alert-danger mb-30">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+							</div><!-- /Alert Mandatory -->
+
+
+							<%= form_tag("/request_quote", method: "post") do %>
+								<fieldset>
+									<input type="hidden" name="action" value="contact_send" />
+
+									<div class="row">
+                                        <div class="col-md-4">
+                                            <label for="buildingType">Building Type*</label>
+                                            <select id="buildingType" class="form-control">
+                                                <option value="select" id="select">--Select--</option>
+                                                <option name = "residential_type" value="residential" id="residential">Residential</option>
+                                                <option name= "commercial_type" value="commercial" id="commercial">Commercial</option>
+                                                <option name="corporate_type" value="corporate" id="corporate">Corporate</option>
+                                                <option name="hybrid_type" value="hybrid" id="hybrid">Hybrid</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                	<div class="hideme">
+                                    	<div class="row" id="residential-row">
+                                            <div class="col-md-4">
+                                                <label for="residential-apartment">Number Of Apartments In The Building</label>
+                                                <input name="residential_apartment" type="number" class="form-control" id="residential-apartment" placeholder="Number Of Apartments" >
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="residential-floor">Number Of Floors, Excluding Basements</label>
+                                                <input name="residential_floor" type="number" class="form-control" id="residential-floor" placeholder="Number Of Floors" >
+                                            </div>
+											<div class="col-md-4">
+												<label for="residential-basement">Number Of Basements Contained In The Building</label>
+												<input name="residential_basement" type="number" class="form-control" id="residential-basement" placeholder="Number Of Basements" >
+											</div>
+										</div>
+                                        <div class="row" id="commercial-row">
+                                            <div class="col-md-4">
+                                                <label for="commercial-business">Number Of Distinct Businesses</label>
+                                                <input name="commercial_business" type="number" class="form-control" id="commercial-business" placeholder="Number Of Businesses" >
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="commercial-floor">Number Of Floors, Excluding Basements</label>
+                                                <input name="commercial_floor" type="number" class="form-control" id="commercial-floor" placeholder="Number Of Floors" >
+                                            </div>
+											<div class="col-md-4">
+												<label for="commercial-basement">Number Of Basements Contained In The Building</label>
+												<input name="commercial_basement" type="number" class="form-control" id="commercial-basement" placeholder="Number Of Basements" >
+											</div>
+                                            <div class="col-md-4">
+												<label for="commercial-parking">Number Of Parking Space Available</label>
+												<input name="commercial_parking" type="number" class="form-control" id="commercial-parking" placeholder="Number Of Parking Spaces" >
+											</div>
+                                            <div class="col-md-4">
+												<label for="commercial-cage">Number Of Elevator Cages To Be Deployed</label>
+												<input name="commercial_cage" type="number" class="form-control" id="commercial-cage" placeholder="Number Of Cages" >
+											</div>
+									    </div>
+										<div class="row" id="corporate-row">
+											<div class="col-md-4">
+												<label for="corporate-companie">Number Of Separate Tenant Companies</label>
+												<input name="corporate_companie" type="number" class="form-control" id="corporate-companie" placeholder="Number Of Companies" >
+											</div>
+											<div class="col-md-4">
+												<label for="corporate-floor">Number Of Floors, Excluding Basements</label>
+												<input name="corporate_floor" type="number" class="form-control" id="corporate-floor" placeholder="Number Of Floors">
+											</div>
+											<div class="col-md-4">
+												<label for="corporate-basement">Number Of Basements Contained In The Building</label>
+												<input name="corporate_basement" type="number" class="form-control" id="corporate-basement" placeholder="Number Of Basements" >
+											</div>
+											<div class="col-md-4">
+												<label for="corporate-parking">Number Of Parking Spaces Available</label>
+												<input name="corporate_parking" type="number" class="form-control" id="corporate-parking" placeholder="Parking Spaces" >
+											</div>
+											<div class="col-md-4">
+												<label for="corporate-occupant">Maximum Number Of Occupants Per Floor</label>
+												<input name="corporate_occupant" type="number" class="form-control" id="corporate-occupant" placeholder="Occupants Per Floor" >
+											</div>
+										</div>
+										<div class="row" id="hybrid-row">
+											<div class="col-md-4">
+												<label for="hybrid-business">Number Of Distinct Businesses</label>
+												<input name="hybrid_business" type="number" class="form-control" id="hybrid-business" placeholder="Number Of Businesses" >
+											</div>
+											<div class="col-md-4">
+												<label for="hybrid-floor">Number Of Floors, Excluding Basements</label>
+												<input name="hybrid_floor" type="number" class="form-control" id="hybrid-floor" placeholder="Number Of Floors" >
+											</div>
+											<div class="col-md-4">
+												<label for="hybrid-basement">Number Of Basements Contained In The Building</label>
+												<input name="hybrid_basement" type="number" class="form-control" id="hybrid-basement" placeholder="Number Of Basements" >
+											</div>
+											<div class="col-md-4">
+												<label for="hybrid-parking">Number Of Parking Spaces Available</label>
+												<input name="hybrid_parking" type="number" class="form-control" id="hybrid-parking" placeholder="Parking Spaces" >
+											</div>
+											<div class="col-md-4">
+												<label for="hybrid-occupant">Maximum Number Of Occupants Per Floor</label>
+												<input name="hybrid_occupant" type="number" class="form-control" id="hybrid-occupant" placeholder="Occupants Per Floor" >
+											</div>
+											<div class="col-md-4">
+												<label for="hybrid-hour">Number Of Hours Of Activity Of The Building (Max: 24)</label>
+												<input name="hybrid_hour" type="number" class="form-control" id="Hybrid-hour" placeholder="Active Hours (Max:24)" >
+											</div>
+										</div>
+									<div class="answer">
+										<div class="row" id="cage-row">
+											<div class="col-md-4">
+												<label for="cage-amount">Number Of Cages</label>
+												<input name="cage_amount" type="number" class="form-control" id="cage-amount" style="width: 230px" placeholder="Number Of Cages" disabled="">  
+											</div> 
+										</div>
+										<label>Select Quality:</label>
+										<input type="radio" id="standard" value="standard" name="standard_line"<label for="standard" class="light">Standard</label>
+										<input type="radio" id="premium" value="premium" name="prenium_line"<label for="premium" class="light">Premium</label>
+										<input type="radio" id="excelium" value="excelium" name="excelium_line"<label for="excelium" class="light">Excelium</label>
+									
+										<div class="row" id="cage-row">
+											<div class="col-md-4">
+												<label for="priceElevator">Unit Price Of Elevator</label>
+												<input name="price_elevator" type="text" class="form-control" id="priceElevator" style="width: 230px" placeholder="Unit Price Of Elevator" disabled="">  
+											</div> 
+											<div class="col-md-4">
+												<label for="totalPric">Total Price Of Each Elevator</label>
+												<input name="total_price" type="text" class="form-control" id="totalPrice" style="width: 230px" placeholder="Total Price Of Elevator" disabled="">  
+											</div> 
+											<div class="col-md-4">
+												<label for="fee">Installation Fees</label>
+												<input name="installation_fees" type="text" class="form-control" id="fee" style="width: 230px" placeholder="Installation Fees" disabled="">  
+											</div> 
+											<div class="col-md-4">
+												<label for="finalPrice">Final Price</label>
+												<input name="final_price" type="text" class="form-control" id="finalPrice"a style="width: 230px" placeholder="Final Price" disabled="">  
+											</div> 
+										</div>
+									
+									</div>	
+								</div>	
+									
+
+								</fieldset>
+
+								<div class="row">
+									<div class="col-md-4">
+										<button type="submit" class="btn btn-blue"><i class="fa fa-check"></i> Get Quote</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+
+						<% end %>
+
+					</div>
+
+				</div>
+			</section>
+            <!-- FOOTER -->
+			<footer id="footer">
+				<div class="container">
+
+
+					<div class="row">
+
+						<!-- col #1 -->
+						<div class="col-md-8">
+
+							<h3 class="letter-spacing-1">WHY US?</h3>
+
+							<!-- Small Description -->
+							<p>
+								Rocket Elevators has been making world class elevators for almost 50 years, and with no plans to stop, just like our elevators we're going to the top.
+							</p>
+							<h2>1(800)-555-1234</h2>
+						</div>
+						<!-- /col #1 -->
+
+						<!-- col #2 -->
+						<div class="col-md-4">
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+							<!-- Newsletter Form -->
+							<p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+									<span class="input-group-btn">
+										<button class="btn btn-danger" type="submit">Subscribe</button>
+									</span>
+								</div>
+							</form>
+							<!-- /Newsletter Form -->
+
+
+						</div>
+						<!-- /col #2 -->
+
+					</div>
+
+
+				</div>
+
+				<div class="copyright">
+					<div class="container">
+						<ul class="float-right m-0 list-inline mobile-block">
+							<li><a href="#">Terms &amp; Conditions</a></li>
+							<li>&bull;</li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+						&copy; All Rights Reserved, Company LTD
+					</div>
+				</div>
+
+			</footer>
+			<!-- /FOOTER -->
