@@ -2,16 +2,11 @@
     <title>RocketElevatorGroupWebsite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %>
-
     <%= stylesheet_link_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_include_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -85,36 +80,23 @@
 									Add .external for an external link!
 								-->
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active">
-										<!-- HOME -->
-										<a href="index.html">
-											HOME
-										</a>
+									<li >
+										<%= link_to "Home" , root_path %>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="index.html#services">
-											SERVICES
-										</a>
+										<%= link_to "Service" , root_path %>
 									</li>
 									<li><!-- Portfolio -->
-										<a href="index.html#portfolio">
-											PORTFOLIO
-										</a>
+										<%= link_to "Portfolio" , root_path %>
 									</li>
 									<li><!-- NEWS -->
-										<a href="index.html#news">
-											NEWS
-										</a>
+										<%= link_to "News" , root_path %>
 									</li>
 									<li><!-- CLIENTS -->
-										<a href="index.html#clients">
-											CLIENTS
-										</a>
+										<%= link_to "Clients" , root_path %>
 									</li>
 									<li><!-- CONTACT -->
-										<a href="index.html#contact">
-											CONTACT
-										</a>
+										<%= link_to "Contact" , root_path %>
 									</li>
 								</ul>
 
@@ -168,8 +150,8 @@
 
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2>
-						<%= link_to 'Request A Quote', home_form_path, class:"btn btn-blue btn-lg " %> 
-						&nbsp; OR &nbsp; 
+						
+						<%= link_to 'Request a Quote', home_form_path, class:"btn btn-blue btn-lg " %> OR &nbsp; 
 						<a class="btn btn-blue btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
 					</div>
 
@@ -373,5 +355,3 @@
 			</footer>
 			<!-- /FOOTER -->
 
-
-			

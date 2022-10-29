@@ -45,53 +45,46 @@
 
 		</div>
 		<!-- /SLIDE TOP -->
-		<!-- wrapper -->
+				<!-- wrapper -->
 		<div id="wrapper">
+
+	
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
 				<!-- TOP NAV -->
 				<header id="topNav">
 					<div class="container">
+
 						<!-- Mobile Menu Button -->
 						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
 							<i class="fa fa-bars"></i>
 						</button>
+
 						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
+						<a class="logo float-left scrollTo" href="#">
 							<%= image_tag "R2.png" %>
 						</a>
 						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
 							<nav class="nav-main">
+
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active">
-										<!-- HOME -->
-										<a href="#top">
-											HOME
-										</a>
+									<li >
+										<%= link_to "Home" , root_path %>
 									</li>
 									<li><!-- SERVICES -->
-										<a href="#services">
-											SERVICES
-										</a>
+										<%= link_to "Service" , root_path %>
 									</li>
 									<li><!-- Portfolio -->
-										<a href="#portfolio">
-											PORTFOLIO
-										</a>
+										<%= link_to "Portfolio" , root_path %>
 									</li>
 									<li><!-- NEWS -->
-										<a href="#news">
-											NEWS
-										</a>
+										<%= link_to "News" , root_path %>
 									</li>
 									<li><!-- CLIENTS -->
-										<a href="#clients">
-											CLIENTS
-										</a>
+										<%= link_to "Clients" , root_path %>
 									</li>
 									<li><!-- CONTACT -->
-										<a href="#contact">
-											CONTACT
-										</a>
+										<%= link_to "Contact" , root_path %>
 									</li>
 								</ul>
 
@@ -267,8 +260,8 @@
 												<input type="text" class="form-control" id="fee" style="width: 230px" placeholder="Installation Fees" disabled="">  
 											</div> 
 											<div class="col-md-4">
-												<label for="finlPrice">Final Price</label>
-												<input type="text" class="form-control" id="finlPrice"a style="width: 230px" placeholder="Final Price" disabled="">  
+												<label for="finalPrice">Final Price</label>
+												<input type="text" class="form-control" id="finalPrice"a style="width: 230px" placeholder="Final Price" disabled="">  
 											</div> 
 										</div>
 									

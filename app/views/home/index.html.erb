@@ -62,7 +62,6 @@
 						<!-- SLIDE 1 Slogan  -->
 						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off"  data-title="Rocket Elevators">
 							<!-- MAIN IMAGE -->
-							<%# <img src="demo_files/images/AdobeStock_103570025.jpeg"  alt="cover image"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> %>
 							<%= image_tag "images/AdobeStock_103570025.jpeg"%>
 							<div class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="165"
@@ -124,8 +123,7 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-									<a class="btn btn-blue btn-lg" href="/form">Quote Form</a>
-									<%# <%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %>  %>
+									<%= link_to 'Quote Form', home_form_path, class:"btn btn-blue btn-lg " %> 
 							</div>
 						</li>
 						<!-- SLIDE 2 Residential Building-->
@@ -161,8 +159,7 @@
 								data-endspeed="300"
 
 								style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;">
-								<a class="btn btn-blue btn-lg" href="/residential">Residential</a>
-									<%# <%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %>
+								<%= link_to 'Residential Details', home_residential_path, class:"btn btn-blue btn-lg " %>
 							</div>
 						</li>
 						<!-- SLIDE 3 Corporate Buildings -->
@@ -199,8 +196,7 @@
 								data-endelementdelay="0.1"
 								data-endspeed="500"
 								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-									<%# <%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %>  
-									<a class="btn btn-blue btn-lg" href="/corporate">Corporate</a>
+									<<%= link_to 'Corporate Details', home_corporate_path, class:"btn btn-blue btn-lg " %>  
 									
 							</div>
 						</li>
@@ -222,7 +218,7 @@
 
 							<h3 class="mt-10">Awards</h3>
 							<p>Rocket Elevators has won multiple awards and medals for their outstanding designs and safety.</p>
-							<a href="#portfolio" class="btn btn-default">The Awards</a>
+							<a href="#portfolio" class="btn btn-blue btn-lg">The Awards</a>
 						</div>
 
 						<div class="col-sm-4">
@@ -245,23 +241,23 @@
 
 				</div>
 			</section>
-			<!-- /Services -->
-            <!-- Ribbon -->
+			<!-- Ribbon -->
 			<section class="parallax parallax-1" style="background-image: url('demo_files/images/AdobeStock_33298664.jpeg');">
+			
 				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
 
 				<div class="container">
 
 					<div class="text-center">
-						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2> 
-						<%= link_to 'Request A Quote', home_form_path, class:"btn btn-blue btn-lg " %> 
+						<h2 class="fs-40 fw-300">Been In The Elevator Business Since 1976</h2>
+						 
+						<%= link_to 'Get a Quote!', home_form_path, class:"btn btn-blue btn-lg " %>  OR &nbsp; 
 						<a class="btn btn-blue btn-lg" href="#contact">Contact Us <i class="fa fa-angle-right"></i></a>
 					</div>
 
 				</div>
 			</section>
 			<!-- /ribbon -->
-            
 			<!-- PORTFOLIO -->
 			<section id="portfolio>
 				<div class="container">
@@ -294,12 +290,13 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/Award 1.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/Award 1.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
 											</span>
 										</span>
+
 										<%= image_tag "images/Award 1.jpg", height: 271 , width: 175 %>
 									</figure>
 
@@ -324,12 +321,13 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/Award-2.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/Award-2.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 
 											</span>
 										</span>
+
 										<%= image_tag "images/Award-2.jpg", height: 271 , width: 175 %>
 									</figure>
 
@@ -354,11 +352,12 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/Award-3.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/Award-3.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
 										</span>
+
 										<%= image_tag "images/Award-3.jpg", height: 271 , width: 175 %>
 									</figure>
 
@@ -383,7 +382,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/Award 4.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/Award 4.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
@@ -413,7 +412,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/Award-5.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/Award-5.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
@@ -443,7 +442,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/award-6.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/award-6.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
@@ -473,7 +472,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/award 7.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/award 7.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
@@ -490,7 +489,10 @@
 									</div>
 
 								</div>
+
 							</div><!-- /item -->
+
+
 							<div class="col-md-3 col-sm-3 mix design"><!-- item -->
 
 								<div class="item-box">
@@ -500,7 +502,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/award 8.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/award 8.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
@@ -529,14 +531,13 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/award-9.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/award-9.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
 										</span>
 
 										<%= image_tag "images/award-9.jpg", height: 271 , width: 175 %>
-										
 									</figure>
 
 									<div class="item-box-desc">
@@ -559,7 +560,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/award-10.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/award-10.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
@@ -588,7 +589,7 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/award-11.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/award-11.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
@@ -617,11 +618,12 @@
 											<span class="inner">
 
 												<!-- lightbox -->
-												<a class="ico-rounded lightbox" href="images/award-12.jpg" data-plugin-options='{"type":"image"}'>
+												<a class="ico-rounded lightbox" href="demo_files/images/award-12.jpg" data-plugin-options='{"type":"image"}'>
 													<span class="fa fa-plus fs-20"></span>
 												</a>
 											</span>
 										</span>
+
 										<%= image_tag "images/award-12.jpg", height: 271 , width: 175 %>
 									</figure>
 
@@ -637,7 +639,41 @@
 				</div>
 			</section>
 			<!-- /PORTFOLIO -->
-            <!-- News -->
+			<!-- Ceo -->
+			<section class="section-xs dark">
+				<div class="container">
+
+					<div class="owl-carousel text-center owl-testimonial m-0" data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
+						<div class="testimonial">
+							<figure>
+								<%= image_tag "images/ceo.png", height: 176.67 , width: 265 %>
+							</figure>
+							<div class="testimonial-content p-0">
+								<p class="lead">Rocket Elevators Was Started From The Ground Up.</p>
+								<cite>
+									Eileen Ai
+									<span>CEO</span>
+								</cite>
+							</div>
+						</div>
+						<div class="testimonial">
+							<figure>
+								<%= image_tag "images/Screenshot_20220618-155158_Photos.jpg", height: 176.67 , width: 265 %>
+							</figure>
+							<div class="testimonial-content p-0">
+								<p class="lead">Single Handedly Built 87 Elevators Himself</p>
+								<cite>
+									Gianluca Ciccone
+									<span>Employee Of The Month</span>
+								</cite>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- /ceo -->
+			<!-- News -->
 			<section id="news">
 				<div class="container">
 
@@ -648,7 +684,8 @@
 						
 						<div class="img-hover">
 							<a href="https://toronto.ctvnews.ca/anna-kendrick-posts-video-about-toronto-elevator-rescue-1.6064190">
-								<%= image_tag "images/new1.jpg", height: 176.67 , width: 265 %>							</a>
+								<%= image_tag "images/new1.jpg", height: 176.67 , width: 265 %>
+							</a>
 
 							<h4 class="text-left mt-20"><a href="https://toronto.ctvnews.ca/anna-kendrick-posts-video-about-toronto-elevator-rescue-1.6064190">Anna Stuck In Elevator!</a></h4>
 							<p class="text-left">Famous actress Anna Kendrick was seen stuck in an elevator this weekend.</p>
@@ -771,43 +808,7 @@
 				</div>
 			</section>
 			<!-- /News -->
-            <!-- Ceo -->
-			<section class="section-xs dark">
-				<div class="container">
-
-					<div class="owl-carousel text-center owl-testimonial m-0" data-plugin-options='{"singleItem": true, "autoPlay": 3500, "navigation": false, "pagination": true, "transitionStyle":"fade"}'>
-						<div class="testimonial">
-							<figure>
-								<%= image_tag "images/ceo.png", height: 65 , width: 65 %>
-							</figure>
-							<div class="testimonial-content p-0">
-								<p class="lead">Rocket Elevators Was Started From The Ground Up.</p>
-								<cite>
-									Eileen Ai
-									<span>CEO</span>
-								</cite>
-							</div>
-						</div>
-						<div class="testimonial">
-							<div class="rounded">
-							<figure>
-								<%= image_tag "images/Screenshot_20220618-155158_Photos.jpg", height: 65 , width: 65 %>
-							</figure>
-							</div>
-							<div class="testimonial-content p-0">
-								<p class="lead">Single Handedly Built 87 Elevators Himself</p>
-								<cite>
-									Gianluca Ciccone
-									<span>Employee Of The Month</span>
-								</cite>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</section>
-			<!-- /ceo -->
-            <!-- Clients -->
+			<!-- Clients -->
 			<section id="clients" class="alternate">
 				<div class="container">
 
@@ -817,69 +818,71 @@
 
 					<ul class="row clients-dotted list-inline">
 						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
-								<%= image_tag "images/PNG/Manchester City.png", height: 182.5 , width: 282.5 %>
+							<a>
+                                <%= image_tag "images/PNG/Manchester City.png", height: 100, width: 100 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
-								<%= image_tag "images/PNG/Kleenex.png", height: 182.5 , width: 282.5 %>
+							<a>
+                                <%= image_tag "images/PNG/Kleenex.png", height: 100, width: 100 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
+							<a>
 								<%= image_tag "images/PNG/Febreeza.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
+							<a>
 								<%= image_tag "images/PNG/klein.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
-								<%= image_tag "images/PNG/chipotle.png", height: 182.5 , width: 282.5 %>
-							</a>
-						</li>
-						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
+							<a>
 								<%= image_tag "images/PNG/cresy.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
-								<%= image_tag "images/PNG/bounty.png", height: 182.5 , width: 282.5 %>
-							</a>
-						</li>
-						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
+							<a>
 								<%= image_tag "images/PNG/Mrclean.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
-								<%= image_tag "images/PNG/rr.png", height: 182.5 , width: 282.5 %>
-							</a>
-						</li>
-						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
-								<%= image_tag "images/PNG/up.png", height: 182.5 , width: 282.5 %>
-							</a>
-						</li>
-						<li class="col-md-3 col-sm-3 col-6">
-							<a href="#">
+							<a>
 								<%= image_tag "images/PNG/Pappa.png", height: 182.5 , width: 282.5 %>
 							</a>
 						</li>
 						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/rr.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/up.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
 								<%= image_tag "images/PNG/7.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/bounty.png", height: 182.5 , width: 282.5 %>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a>
+								<%= image_tag "images/PNG/chipotle.png", height: 182.5 , width: 282.5 %>
+							</a>
 						</li>
 					</ul>
 
 				</div>
 			</section>
 			<!-- /Clients -->
-            <!-- CONTACT -->
+			<!-- CONTACT -->
 			<section id="contact">
 				<div class="container">
 
@@ -888,6 +891,8 @@
 						<p class="lead font-lato">Hear Back From Us Faster Than Our Elevators</p>
 						<hr />
 					</header>
+
+
 					<div class="row">
 						<!-- FORM -->
 						<div class="col-md-8 col-sm-8">
@@ -1013,7 +1018,7 @@
 				</div>
 			</section>
 			<!-- /CONTACT -->
-            <!-- FOOTER -->
+			<!-- FOOTER -->
 			<footer id="footer">
 				<div class="container">
 
@@ -1073,3 +1078,25 @@
 
 			</footer>
 			<!-- /FOOTER -->
+
+		</div>
+		<!-- /wrapper -->
+
+
+		<!-- JAVASCRIPT FILES -->
+		<script>var plugin_path = 'assets/plugins/';</script>
+		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+
+		<script src="assets/js/scripts.js"></script>
+
+		<!-- REVOLUTION SLIDER -->
+		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="assets/js/view/demo.revolution_slider.js"></script>
+
+		<!-- PAGELEVEL SCRIPTS -->
+		<script src="assets/js/contact.js"></script>
+
+		</script>
+	</body>
+</html>
