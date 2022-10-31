@@ -1,15 +1,7 @@
-# Rails.application.routes.draw do
-#   devise_for :users
-#   #get 'home/index'
-#   root "home#index"
-#   get 'corporate', to:'home#corporate'
-#   get 'residential', to: 'home#residential'
-#   get 'form', to: 'home#form'
-#   get 'login', to: 'home#login'
-#   get 'admin', to: 'home#admin'
-
 Rails.application.routes.draw do
     
+  resources :customers
+  resources :employees
   devise_for :users
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'
