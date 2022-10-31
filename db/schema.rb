@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_27_213750) do
+ActiveRecord::Schema.define(version: 2022_10_31_171722) do
+
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.integer "columnID"
+    t.string "serialNumber"
+    t.boolean "model"
+    t.boolean "type"
+    t.string "status"
+    t.datetime "commissioningDate"
+    t.datetime "lastInspection"
+    t.string "inspectionCertificate"
+    t.string "information"
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.boolean "residential_type"
