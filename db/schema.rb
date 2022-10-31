@@ -10,7 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_31_185504) do
+ActiveRecord::Schema.define(version: 2022_10_31_200803) do
+
+  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.integer "CustomerID"
+    t.string "Address_of_the_building"
+    t.string "Full_Name_of_the_building_administrator"
+    t.string "Email_of_the_administrator_of_the_building"
+    t.integer "Phone_number_of_the_building_administrator"
+    t.string "Full_Name_of_the_technical_contact_for_the_building"
+    t.string "Technical_contact_email_for_the_building"
+    t.integer "Technical_contact_phone_for_the_building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "buildings_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.integer "BuildingID"
+    t.string "InformationKey"
+    t.string "Value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.integer "BatteryID"
+    t.string "Type"
+    t.integer "Number_of_floors_served"
+    t.string "Status"
+    t.string "Information"
+    t.string "Notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "user_id"

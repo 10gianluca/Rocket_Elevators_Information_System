@@ -1,3 +1,4 @@
+require "faker"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -77,3 +78,21 @@ Employee.create!([{
     password: "password"
 }
 ])
+
+CreateBuildings.destroy_all
+CreateBuildings.create!([{
+    x = 0
+    
+    100.times do
+        x = X + 1
+        buildings = Buildings.new(
+            CustomerID: x,
+            Address_of_the_building: ..,
+            Full_Name_of_the_building_administrator: ..,
+            Email_of_the_administrator_of_the_building: ..,
+            Phone_number_of_the_building_administrator: ..,
+            Full_Name_of_the_technical_contact_for_the_building: ..,
+            Technical_contact_email_for_the_building: ..,
+            Technical_contact_phone_for_the_building: ..
+        )
+}])

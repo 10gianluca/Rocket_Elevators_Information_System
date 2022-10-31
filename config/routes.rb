@@ -1,7 +1,10 @@
+
 Rails.application.routes.draw do
-    
   resources :customers
   resources :employees
+  resources :buildings_details
+  resources :columns
+  resources :buildings
   devise_for :users
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'
