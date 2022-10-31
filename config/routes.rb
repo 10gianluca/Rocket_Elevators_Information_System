@@ -1,4 +1,5 @@
 # Rails.application.routes.draw do
+  resources :buildings
 #   devise_for :users
 #   #get 'home/index'
 #   root "home#index"
@@ -10,6 +11,7 @@
 
 Rails.application.routes.draw do
     
+  resources :buildings
   devise_for :users
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'
