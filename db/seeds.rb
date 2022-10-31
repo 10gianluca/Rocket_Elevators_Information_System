@@ -78,21 +78,27 @@ Employee.create!([{
     password: "password"
 }
 ])
-
-CreateBuildings.destroy_all
-CreateBuildings.create!([{
-    x = 0
-    
-    100.times do
-        x = X + 1
-        buildings = Buildings.new(
-            CustomerID: x,
-            Address_of_the_building: ..,
-            Full_Name_of_the_building_administrator: ..,
-            Email_of_the_administrator_of_the_building: ..,
-            Phone_number_of_the_building_administrator: ..,
-            Full_Name_of_the_technical_contact_for_the_building: ..,
-            Technical_contact_email_for_the_building: ..,
-            Technical_contact_phone_for_the_building: ..
-        )
-}])
+x = 0
+([
+100.times do
+    x = x + 1
+    full_address = Faker::Address.full_address
+    name = Faker::Name.name 
+    email = Faker::Internet.email
+    phone = Faker::PhoneNumber.cell_phone_in_e164,
+    name2 = Faker::Name.name 
+    email2 = Faker::Internet.email
+    phone2 = Faker::PhoneNumber.cell_phone_in_e164,
+    building = Building.new(
+        CustomerID: x,
+        Address_of_the_building: full_address,
+        Full_Name_of_the_building_administrator: name,
+        Email_of_the_administrator_of_the_building: email,
+        Phone_number_of_the_building_administrator: phone,
+        Full_Name_of_the_technical_contact_for_the_building: name2,
+        Technical_contact_email_for_the_building: email2,
+        Technical_contact_phone_for_the_building: phone2
+    )
+    building.save
+end
+])
