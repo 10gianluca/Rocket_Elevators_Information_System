@@ -1,4 +1,5 @@
 # Rails.application.routes.draw do
+  resources :buildings_details
   #resources :columns
   #resources :buildings
 #   devise_for :users
@@ -12,6 +13,7 @@
 
 Rails.application.routes.draw do
     
+  resources :buildings_details
   resources :columns
   resources :buildings
   devise_for :users
