@@ -1,5 +1,6 @@
 # Rails.application.routes.draw do
-# resources :elevators
+#  resources :addresses
+# resources :leads
 #   devise_for :users
 #   #get 'home/index'
 #   root "home#index"
@@ -10,8 +11,9 @@
 #   get 'admin', to: 'home#admin'
 
 Rails.application.routes.draw do
-    
-  resources :elevators
+  resources :elevators  
+  resources :addresses
+  resources :leads
   devise_for :users
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'
