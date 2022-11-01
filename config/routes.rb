@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   resources :customers
   resources :employees
@@ -5,6 +6,9 @@ Rails.application.routes.draw do
   resources :columns
   resources :buildings
   resources :batteries
+  resources :elevators  
+  resources :addresses
+  resources :leads
   devise_for :users
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'

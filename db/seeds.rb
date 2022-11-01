@@ -84,15 +84,15 @@ Building.destroy_all
     full_address = Faker::Address.full_address
     name = Faker::Name.name 
     email = Faker::Internet.email
-    phone = Faker::PhoneNumber.cell_phone_in_e164,
+    phone1 = Faker::PhoneNumber.cell_phone,
     name2 = Faker::Name.name 
     email2 = Faker::Internet.email
-    phone2 = Faker::PhoneNumber.cell_phone_in_e164,
+    phone2 = Faker::PhoneNumber.cell_phone
     building = Building.new(
         Address_of_the_building: full_address,
         Full_Name_of_the_building_administrator: name,
         Email_of_the_administrator_of_the_building: email,
-        Phone_number_of_the_building_administrator: phone,
+        Phone_number_of_the_building_administrator: phone1,
         Full_Name_of_the_technical_contact_for_the_building: name2,
         Technical_contact_email_for_the_building: email2,
         Technical_contact_phone_for_the_building: phone2
