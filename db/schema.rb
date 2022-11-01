@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2022_10_31_200803) do
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.integer "CustomerID"
     t.string "Address_of_the_building"
     t.string "Full_Name_of_the_building_administrator"
     t.string "Email_of_the_administrator_of_the_building"

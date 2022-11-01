@@ -78,10 +78,9 @@ Employee.create!([{
     password: "password"
 }
 ])
-x = 0
+Building.destroy_all
 ([
 100.times do
-    x = x + 1
     full_address = Faker::Address.full_address
     name = Faker::Name.name 
     email = Faker::Internet.email
@@ -90,7 +89,6 @@ x = 0
     email2 = Faker::Internet.email
     phone2 = Faker::PhoneNumber.cell_phone_in_e164,
     building = Building.new(
-        CustomerID: x,
         Address_of_the_building: full_address,
         Full_Name_of_the_building_administrator: name,
         Email_of_the_administrator_of_the_building: email,
