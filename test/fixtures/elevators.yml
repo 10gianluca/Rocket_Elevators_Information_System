@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  columnID: 1
+  serialNumber: MyString
+  model: false
+  type: false
+  status: MyString
+  commissioningDate: 2022-10-31 13:17:22
+  lastInspection: 2022-10-31 13:17:22
+  inspectionCertificate: MyString
+  information: MyString
+  notes: MyString
+
+two:
+  columnID: 1
+  serialNumber: MyString
+  model: false
+  type: false
+  status: MyString
+  commissioningDate: 2022-10-31 13:17:22
+  lastInspection: 2022-10-31 13:17:22
+  inspectionCertificate: MyString
+  information: MyString
+  notes: MyString

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  status: MyString
+  employeeId: 1
+  dateofcomissioning: 2022-10-31 16:35:31
+  dateoflastinspection: 2022-10-31 16:35:31
+  certificationofops: MyString
+  information: MyString
+  notes: MyString
+  building: 
+
+two:
+  type: 
+  status: MyString
+  employeeId: 1
+  dateofcomissioning: 2022-10-31 16:35:31
+  dateoflastinspection: 2022-10-31 16:35:31
+  certificationofops: MyString
+  information: MyString
+  notes: MyString
+  building: 
