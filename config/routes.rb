@@ -1,6 +1,6 @@
 # Rails.application.routes.draw do
   
-  resources :batteries
+ # resources :batteries
 #   devise_for :users
 #   #get 'home/index'
 #   root "home#index"

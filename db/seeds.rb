@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-User.create!([{
+Employee.destroy_all
+Employee.create!([{
   title: "Gopher",
   firstname: "Mathieu",
   lastname: "Houde",
@@ -77,3 +77,13 @@ User.create!([{
     encrypted_password: "password"
 }
 ])
+battery= Battery.create!(
+        type: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
+        status: ['Active', 'Inactive'].sample,
+        employeeId: Faker::Number.number(digits: 5),
+        dateofcommissioning: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
+        dateoflastinspection: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
+        certificateofops: Faker::Lorem.sentence,
+        information: Faker::Lorem.sentence,
+        notes: Faker::Lorem.sentence
+        )
