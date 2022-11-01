@@ -10,16 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_31_200803) do
+ActiveRecord::Schema.define(version: 2022_10_31_203439) do
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "buildingType"
+    t.string "status"
+    t.integer "employeeId"
+    t.datetime "dateofcomissioning"
+    t.datetime "dateoflastinspection"
+    t.string "certificationofops"
+    t.string "information"
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "Address_of_the_building"
     t.string "Full_Name_of_the_building_administrator"
     t.string "Email_of_the_administrator_of_the_building"
-    t.integer "Phone_number_of_the_building_administrator"
+    t.string "Phone_number_of_the_building_administrator"
     t.string "Full_Name_of_the_technical_contact_for_the_building"
     t.string "Technical_contact_email_for_the_building"
-    t.integer "Technical_contact_phone_for_the_building"
+    t.string "Technical_contact_phone_for_the_building"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -106,15 +119,13 @@ ActiveRecord::Schema.define(version: 2022_10_31_200803) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "title"
+    t.string "email"
+    t.string "encrypted_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

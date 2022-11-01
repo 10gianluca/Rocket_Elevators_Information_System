@@ -100,3 +100,19 @@ Building.destroy_all
     building.save
 end
 ])
+Battery.destroy_all
+([
+100.times do
+    battery = Battery.new(
+        buildingType: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
+        status: ["Active", "Inactive"].sample,
+        employeeId: Faker::Number.number(digits: 5),
+        dateofcomissioning: Faker::Date.in_date_period,
+        dateoflastinspection: Faker::Date.in_date_period,
+        certificationofops: Faker::Lorem.sentence,
+        information: Faker::Lorem.sentence,
+        notes: Faker::Lorem.sentence
+        )
+        battery.save
+    end
+])
