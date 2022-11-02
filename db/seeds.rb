@@ -116,3 +116,21 @@ Battery.destroy_all
         battery.save
     end
 ])
+Customer.destroy_all
+([
+100.times do
+    customer = Customer.new(
+        customer_creation_date: Faker::Date.in_date_period,
+        company_name: Faker::Company.name,
+        company_headquarter_address: Faker::Address.full_address,
+        full_name_of_company_contact: Faker::Name.name, 
+        company_contact_phone: Faker::PhoneNumber.cell_phone,
+        email_of_company_contact: Faker::Internet.email,
+        company_description: Faker::Lorem.sentence,
+        full_name_of_service_technical_authority: Faker::Name.name,
+        technical_authority_phone_for_service: Faker::PhoneNumber.cell_phone,
+        technical_manager_email_for_service: Faker::Internet.email
+        )
+        customer.save
+    end
+])
