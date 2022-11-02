@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   devise_for :users
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'
+  post '/form_submit', to: 'lead#create'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #get 'home/index'
     root "home#index"

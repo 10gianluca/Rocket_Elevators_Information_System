@@ -63,10 +63,10 @@ class QuotesController < ApplicationController
   def create 
 
     @quote = Quote.create 
-    @quote.residential_type= params[:residential_type]
-    @quote.commercial_type= params[:commercial_type]
-    @quote.corporate_type= params[:corporate_type]
-    @quote.hybrid_type= params[:hybrid_type]
+    @quote.residential_type = params[:residential_type]
+    @quote.commercial_type = params[:commercial_type]
+    @quote.corporate_type = params[:corporate_type]
+    @quote.hybrid_type = params[:hybrid_type]
     @quote.residential_apartment= params[:residential_apartment]
     @quote.residential_floor= params[:residential_floor]
     @quote.residential_basement= params[:residential_basement]

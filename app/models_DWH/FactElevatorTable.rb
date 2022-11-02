@@ -1,0 +1,2 @@
+class FactElevatorTable < ApplicationRecord
+end

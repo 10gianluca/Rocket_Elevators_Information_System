@@ -1,0 +1,2 @@
+class DimCustomerTable < ApplicationRecord
+end

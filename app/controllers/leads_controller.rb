@@ -22,6 +22,16 @@ class LeadsController < ApplicationController
   # POST /leads or /leads.json
   def create
     @lead = Lead.new(lead_params)
+    @lead.contact_name = params[:contact_name]
+    @lead.company_name = params[:company_name]
+    @lead.email = params[:email]
+    @lead.phone = params[:phone]
+    @lead.project_name = params[:project_name]
+    @lead.project_description = params[:project_description]
+    @lead.department = params[:department]
+    @lead.message = params[:message]
+    @lead.attached_file = params[:attached_file]
+    @lead.date = params[:date]
 
     respond_to do |format|
       if @lead.save
