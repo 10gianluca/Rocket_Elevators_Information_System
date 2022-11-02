@@ -12,9 +12,11 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
       t.string :full_name_of_service_technical_authority
       t.string :technical_authority_phone_for_service
       t.string :technical_manager_email_for_service
+      t.belongs_to :user
+      t.belongs_to :address
       t.timestamps
     end
-    # add_foreign_key :customers, :addresses
-    # add_foreign_key :customers, :users
+    add_foreign_key :customers, :addresses
+    add_foreign_key :customers, :users
   end
 end

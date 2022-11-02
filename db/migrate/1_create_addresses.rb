@@ -10,8 +10,13 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :postal_code
       t.string :country
       t.string :notes
+      t.belongs_to :customer
+      t.belongs_to :building
+
+
 
       t.timestamps
     end
+    #add_foreign_key :address_id
   end
 end

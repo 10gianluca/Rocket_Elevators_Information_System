@@ -157,7 +157,7 @@ Column.destroy_all
 ([
 100.times do
     column = Column.new(
-        BatteryID: Faker::Number.number(digits: 5),
+        # BatteryID: Faker::Number.number(digits: 5),
         Number_of_floors_served: Faker::Number.number(digits: 10),
         Status: ['Active', 'Inactive'].sample,
         Type: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
@@ -173,7 +173,7 @@ Elevator.destroy_all
 ([
 100.times do
     elevator = Elevator.new(
-        columnID: Faker::Number.number(digits: 10),
+        # columnID: Faker::Number.number(digits: 10),
         serialNumber: Faker::Number.number(digits: 10),
         model:Faker::Lorem.word,
         status: ['Active', 'Inactive'].sample,
