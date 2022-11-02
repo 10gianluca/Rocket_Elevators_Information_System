@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_31_230406) do
+ActiveRecord::Schema.define(version: 2022_10_31_225837) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "type_of_address"
@@ -71,10 +71,10 @@ ActiveRecord::Schema.define(version: 2022_10_31_230406) do
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.integer "user_id"
     t.date "customer_creation_date"
+    t.bigint "user_id"
+    t.bigint "address_id"
     t.string "company_name"
-    t.string "company_headquarter_address"
     t.string "full_name_of_company_contact"
     t.string "company_contact_phone"
     t.string "email_of_company_contact"
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2022_10_31_230406) do
     t.string "technical_manager_email_for_service"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "fk_rails_3f9404ba26"
+    t.index ["user_id"], name: "fk_rails_9917eeaf5d"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -172,4 +174,6 @@ ActiveRecord::Schema.define(version: 2022_10_31_230406) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "customers", "addresses"
+  add_foreign_key "customers", "users"
 end
