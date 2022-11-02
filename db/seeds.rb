@@ -78,7 +78,7 @@ Employee.create!([{
     password: "password"
 }
 ])
-Building.destroy_all
+bulding = Building.destroy_all
 ([
 100.times do
     full_address = Faker::Address.full_address
@@ -100,11 +100,11 @@ Building.destroy_all
     building.save
 end
 ])
-Battery.destroy_all
+battery = Battery.destroy_all
 ([
 100.times do
     battery = Battery.new(
-        buildingType: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
+        buildingType: ["residential", "commercial", "corporate", "hybrid"].sample,
         status: ["Active", "Inactive"].sample,
         employeeId: Faker::Number.number(digits: 1),
         dateofcomissioning: Faker::Date.in_date_period,
@@ -134,4 +134,39 @@ Customer.destroy_all
         )
         customer.save
     end
+])
+100.times do
+    BuildingsDetail.create!(
+        
+    InformationKey: Faker::Lorem.sentence,
+    Value: Faker::Lorem.sentence
+    )
+end
+100.times do
+column = Column.create!(
+    BatteryID: Faker::Number.number(digits: 5),
+    Number_of_floors_served: Faker::Number.number(digits: 10),
+    Status: ['Active', 'Inactive'].sample,
+    Type: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
+    Information: Faker::Lorem.sentence,
+    Notes: Faker::Lorem.sentence
+        )
+end
+
+elevator = Elevator.destroy_all
+([
+50.times do
+elevator = Elevator.create!(
+    columnID: Faker::Number.number(digits: 10),
+    serialNumber: Faker::Number.number(digits: 10),
+    model:Faker::Lorem.word,
+    status: ['Active', 'Inactive'].sample,
+    inspectionCertificate: Faker::Name.name,
+    commissioningDate: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
+    lastInspection: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
+    elevatorType: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
+    information: Faker::Lorem.sentence,
+    notes: Faker::Lorem.sentence
+    )
+end
 ])

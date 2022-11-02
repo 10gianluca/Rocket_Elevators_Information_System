@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2022_10_31_225837) do
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "BatteryID"
     t.string "Type"
-    t.integer "Number_of_floors_served"
+    t.string "Number_of_floors_served"
     t.string "Status"
     t.string "Information"
     t.string "Notes"
@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(version: 2022_10_31_225837) do
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.integer "columnID"
+    t.string "columnID"
     t.string "serialNumber"
-    t.boolean "model"
-    t.boolean "type"
+    t.string "model"
+    t.string "elevatorType"
     t.string "status"
     t.datetime "commissioningDate"
     t.datetime "lastInspection"
