@@ -187,3 +187,43 @@ Elevator.destroy_all
     elevator.save
 end
 ])
+
+Quote.destroy_all
+([
+
+100.times do
+    quote = Quote.new(
+        buildingType: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
+        residential_apartment: Faker::Number.number(digits:2),
+        residential_floor: Faker::Number.number(digits: 1),
+        residential_basement: Faker::Number.number(digits:1),
+        commercial_business: Faker::Number.number(digits:1),
+        commercial_floor: Faker::Number.number(digits:1),
+        commercial_basement: Faker::Number.number(digits:1),
+        commercial_parking: Faker::Number.number(digits:1),
+        commercial_cage: Faker::Number.number(digits:1),
+        corporate_companie: Faker::Number.number(digits:1),
+        corporate_floor: Faker::Number.number(digits:1),
+        corporate_basement: Faker::Number.number(digits:1),
+        corporate_parking: Faker::Number.number(digits:1),
+        corporate_occupant: Faker::Number.number(digits:1),
+        hybrid_business: Faker::Number.number(digits:1),
+        hybrid_floor: Faker::Number.number(digits:1),
+        hybrid_basement: Faker::Number.number(digits:1),
+        hybrid_parking: Faker::Number.number(digits:1),
+        hybrid_occupant: Faker::Number.number(digits:1),
+        hybrid_hour: Faker::Number.number(digits:1),
+        cage_amount: Faker::Number.number(digits:1),
+        standard_line: Faker::Number.number(digits:1),
+        premium_line: Faker::Number.number(digits:1),
+        excelium_line: Faker::Number.number(digits:1),
+        price_elevator: Faker::Number.number(digits:6),
+        total_price: Faker::Number.number(digits:6),
+        installation_fees: Faker::Number.number(digits:6),
+        final_price: Faker::Number.number(digits:6),
+        )
+        quote.save
+    end
+])
+
+

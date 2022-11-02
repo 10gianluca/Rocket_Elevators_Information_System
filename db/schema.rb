@@ -129,10 +129,7 @@ ActiveRecord::Schema.define(version: 2022_10_31_225837) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.boolean "residential_type"
-    t.boolean "commercial_type"
-    t.boolean "corporate_type"
-    t.boolean "hybrid_type"
+    t.string "buildingType"
     t.integer "residential_apartment"
     t.integer "residential_floor"
     t.integer "residential_basement"

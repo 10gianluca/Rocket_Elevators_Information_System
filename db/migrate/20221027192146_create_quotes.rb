@@ -1,10 +1,7 @@
 class CreateQuotes < ActiveRecord::Migration[5.2]
   def change
     create_table :quotes do |t|
-      t.boolean :residential_type
-      t.boolean :commercial_type
-      t.boolean :corporate_type
-      t.boolean :hybrid_type
+      t.string :buildingType
       t.integer :residential_apartment
       t.integer :residential_floor
       t.integer :residential_basement
