@@ -10,7 +10,6 @@ class CreateBatteries < ActiveRecord::Migration[5.2]
       t.string :certificationofops
       t.string :information
       t.string :notes
-      # t.belongs_to :employee
       t.belongs_to :building
 
       t.timestamps

@@ -12,6 +12,7 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :notes
       t.belongs_to :customer
       t.belongs_to :building
+      
 
 
 

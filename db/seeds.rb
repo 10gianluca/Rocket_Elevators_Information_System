@@ -1,4 +1,5 @@
-#require "faker"
+require "faker"
+require 'json'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -79,17 +80,62 @@ Employee.create!([{
 }
 ])
 
+
+file = File.read('./db/addresses.json')
+data_hash = JSON.parse(file)
+Address.destroy_all
+i = 0
+99.times do
+    number_and_street1 = data_hash['addresses'].fetch(i)['address1']
+    city1 = data_hash['addresses'].fetch(i)['city']
+    postal_code1 = data_hash['addresses'].fetch(i)['postalCode']
+    address = Address.create!(
+        type_of_address: "Residential",
+        status: "Valid",
+        entity: "Street",
+        number_and_street: number_and_street1,
+        suite_or_apartment: "No",
+        city: city1,
+        postal_code: postal_code1,
+        country: "United States",
+        notes: "none"
+    )
+    address.save
+i = i + 1    
+end
+
+
+Customer.destroy_all
+# Customer.create!
+
+99.times do
+    customer = Customer.create!(
+        customer_creation_date: Faker::Date.in_date_period,
+        company_name: Faker::Company.name,
+        #address_id: Faker::Address.full_address,
+        full_name_of_company_contact: Faker::Name.name,
+        company_contact_phone: Faker::PhoneNumber.cell_phone,
+        email_of_company_contact: Faker::Internet.email,
+        company_description: Faker::Lorem.sentence,
+        full_name_of_service_technical_authority: Faker::Name.name,
+        technical_authority_phone_for_service: Faker::PhoneNumber.cell_phone,
+        technical_manager_email_for_service: Faker::Internet.email
+        )
+        customer.save
+end
+
+
 Building.destroy_all
 ([
-100.times do
+99.times do
     full_address = Faker::Address.full_address
     name = Faker::Name.name 
     email = Faker::Internet.email
-    phone1 = Faker::PhoneNumber.cell_phone,
+    phone1 = Faker::PhoneNumber.cell_phone
     name2 = Faker::Name.name 
     email2 = Faker::Internet.email
     phone2 = Faker::PhoneNumber.cell_phone
-    building = Building.new(
+    building = Building.create!(
         Address_of_the_building: full_address,
         Full_Name_of_the_building_administrator: name,
         Email_of_the_administrator_of_the_building: email,
@@ -102,11 +148,24 @@ Building.destroy_all
 end
 ])
 
+
+BuildingsDetail.destroy_all
+# BuildingsDetail.create!
+([
+99.times do
+    building_detail = BuildingsDetail.create!(
+        InformationKey: Faker::Lorem.sentence,
+        Value: Faker::Lorem.sentence
+        )
+        building_detail.save
+end
+])
+
 Battery.destroy_all
 # Battery.create!
 ([
-100.times do
-    battery = Battery.new(
+99.times do
+    battery = Battery.create!(
         buildingType: ["residential", "commercial", "corporate", "hybrid"].sample,
         status: ["Active", "Inactive"].sample,
         employeeId: Faker::Number.number(digits: 1),
@@ -120,43 +179,14 @@ Battery.destroy_all
 end
 ])
 
-Customer.destroy_all
-# Customer.create!
-([
-100.times do
-    customer = Customer.new(
-        customer_creation_date: Faker::Date.in_date_period,
-        company_name: Faker::Company.name,
-        # company_headquarter_address: Faker::Address.full_address,
-        full_name_of_company_contact: Faker::Name.name,
-        company_contact_phone: Faker::PhoneNumber.cell_phone,
-        email_of_company_contact: Faker::Internet.email,
-        company_description: Faker::Lorem.sentence,
-        full_name_of_service_technical_authority: Faker::Name.name,
-        technical_authority_phone_for_service: Faker::PhoneNumber.cell_phone,
-        technical_manager_email_for_service: Faker::Internet.email
-        )
-        customer.save
-end
-])
 
-BuildingsDetail.destroy_all
-# BuildingsDetail.create!
-([
-100.times do
-    building_detail = BuildingsDetail.new(
-        InformationKey: Faker::Lorem.sentence,
-        Value: Faker::Lorem.sentence
-        )
-        building_detail.save
-end
-])
+
 
 Column.destroy_all
 # Column.create!
 ([
-100.times do
-    column = Column.new(
+99.times do
+    column = Column.create!(
         # BatteryID: Faker::Number.number(digits: 5),
         Number_of_floors_served: Faker::Number.number(digits: 10),
         Status: ['Active', 'Inactive'].sample,
@@ -171,8 +201,8 @@ end
 Elevator.destroy_all
 # Elevator.create!
 ([
-100.times do
-    elevator = Elevator.new(
+99.times do
+    elevator = Elevator.create!(
         # columnID: Faker::Number.number(digits: 10),
         serialNumber: Faker::Number.number(digits: 10),
         model:Faker::Lorem.word,
@@ -191,8 +221,8 @@ end
 Quote.destroy_all
 ([
 
-100.times do
-    quote = Quote.new(
+99.times do
+    quote = Quote.create!(
         buildingType: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
         residential_apartment: Faker::Number.number(digits:2),
         residential_floor: Faker::Number.number(digits: 1),
@@ -291,29 +321,5 @@ Quote.destroy_all
 
 #Seeding for Address table from addresses.json file containing 100 addresses
 #Create Address object to define variables coming from json file 
-require 'json'
-file = File.read('./db/addresses.json')
-data_hash = JSON.parse(file)
 
-
-
-Address.destroy_all
-i = 0
-99.times do
-    number_and_street1 = data_hash['addresses'].fetch(i)['address1']
-    city1 = data_hash['addresses'].fetch(i)['city']
-    postal_code1 = data_hash['addresses'].fetch(i)['postalCode']
-    Address.create!(
-        type_of_address: "Residential",
-        status: "Valid",
-        entity: "Street",
-        number_and_street: number_and_street1,
-        suite_or_apartment: "No",
-        city: city1,
-        postal_code: postal_code1,
-        country: "United States",
-        notes: "none"
-    )
-i = i + 1    
-end
 
