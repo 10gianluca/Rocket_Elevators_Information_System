@@ -104,9 +104,9 @@ ActiveRecord::Schema.define(version: 2022_10_31_225837) do
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "title"
     t.string "firstname"
     t.string "lastname"
-    t.string "title"
     t.string "email"
     t.string "password"
     t.datetime "created_at", null: false
@@ -162,9 +162,9 @@ ActiveRecord::Schema.define(version: 2022_10_31_225837) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "title"
     t.string "firstname"
     t.string "lastname"
-    t.string "title"
     t.string "email"
     t.string "encrypted_password"
     t.datetime "created_at", null: false
