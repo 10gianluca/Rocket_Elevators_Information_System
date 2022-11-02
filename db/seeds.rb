@@ -185,21 +185,26 @@ Battery.destroy_all
 require 'json'
 file = File.read('./db/addresses.json')
 data_hash = JSON.parse(file)
-puts data_hash.keys
+
 
 
 Address.destroy_all
-100.times do |index|
+i = 0
+99.times do
+    number_and_street1 = data_hash['addresses'].fetch(i)['address1']
+    city1 = data_hash['addresses'].fetch(i)['city']
+    postal_code1 = data_hash['addresses'].fetch(i)['postalCode']
     Address.create!(
-        type_of_address: "test",
-        status: "test",
-        entity: "test",
-        number_and_street: data_hash["address1"],
-        suite_or_apartment: "test",
-        city: data_hash["city"],
-        postal_code: data_hash["postalCode"],
-        country: "test",
-        notes: "test"
+        type_of_address: "Residential",
+        status: "Valid",
+        entity: "Street",
+        number_and_street: number_and_street1,
+        suite_or_apartment: "No",
+        city: city1,
+        postal_code: postal_code1,
+        country: "United States",
+        notes: "none"
     )
+i = i + 1    
 end
 
