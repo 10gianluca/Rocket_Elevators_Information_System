@@ -61,7 +61,6 @@ class QuotesController < ApplicationController
   
   # POST /quotes or /quotes.json
   def create 
-    @quote = Quote.new(quote_params)
 
     @quote = Quote.create 
     @quote.residential_type= params[:residential_type]
@@ -102,14 +101,12 @@ class QuotesController < ApplicationController
     respond_to do |format|
       if @quote.save
         format.html do
-          redirect_to @quote, notice: "Quote was successfully created."
+          redirect_to '/'
         end
-        format.json { render :show, status: :created, location: @quote }
+        format.json { render json: @quote }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json do
-          render json: @quote.errors, status: :unprocessable_entity
-        end
+        format.html { render 'new' }
+        format.json { render json: @quote.errors, status: :unprocessable_entity }
       end
     end
   end
