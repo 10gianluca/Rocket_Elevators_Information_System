@@ -80,6 +80,17 @@ Employee.create!([{
 }
 ])
 
+User.destroy_all
+99.times do
+    users = User.create!(
+        title: Faker::Name.unique.last_name,
+        first_name: Faker::Name.unique.first_name,
+        last_name: Faker::Name.unique.last_name,
+        email: Faker::Internet.unique.email,
+        password: Faker::Internet.unique.password
+    )
+    users.save
+end
 
 file = File.read('./db/addresses.json')
 data_hash = JSON.parse(file)
@@ -106,10 +117,9 @@ end
 
 
 Customer.destroy_all
-# Customer.create!
-
 99.times do
     customer = Customer.create!(
+        # user_id: users.id,
         customer_creation_date: Faker::Date.in_date_period,
         company_name: Faker::Company.name,
         #address_id: Faker::Address.full_address,
