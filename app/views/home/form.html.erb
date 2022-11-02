@@ -1,6 +1,7 @@
 <head>
     <title>RocketElevatorGroupWebsite</title>
     <%= csrf_meta_tags %>
+	<%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %>
@@ -9,6 +10,35 @@
     <%= javascript_include_tag 'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+	<meta charset="utf-8" />
+	
+	<meta name="description" content="" />
+	<meta name="Author" content="Gianluca Ciccone" />
+	
+	<link rel="shortcut icon" type="image/jpg" href="demo_files/images/Tab.png"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- mobile settings -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+	<!-- WEB FONTS : use %7C instead of | (pipe) -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+	<!-- CORE CSS -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- REVOLUTION SLIDER -->
+	<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+
+	<!-- THEME CSS -->
+	<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+	<!-- PAGE LEVEL SCRIPTS -->
+	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
   </head>
 <!-- SLIDE TOP -->
@@ -128,7 +158,8 @@
 							</div><!-- /Alert Mandatory -->
 
 
-							<form action="php/contact.php" method="post" enctype="multipart/form-data">
+							<form action="/request_quote" method="post" enctype="multipart/form-data">
+							<%= form_for [@chatroom, Message.new], remote: true do |f| %>
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
@@ -271,6 +302,7 @@
 										<button type="submit" class="btn btn-blue"><i class="fa fa-check"></i> Get Quote</button>
 									</div>
 								</div>
+							<% end %>
 							</form>
 
 						</div>
