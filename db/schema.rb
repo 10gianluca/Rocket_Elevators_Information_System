@@ -84,8 +84,6 @@ ActiveRecord::Schema.define(version: 2022_10_31_225837) do
     t.string "technical_manager_email_for_service"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "fk_rails_3f9404ba26"
-    t.index ["user_id"], name: "fk_rails_9917eeaf5d"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -171,6 +169,4 @@ ActiveRecord::Schema.define(version: 2022_10_31_225837) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "customers", "addresses"
-  add_foreign_key "customers", "users"
 end
