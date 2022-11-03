@@ -905,32 +905,35 @@
 							</div><!-- /Alert Mandatory -->
 
 
-							<form action="php/contact.php" method="post" enctype="multipart/form-data">
+							<form action="/request_quote" method="post" enctype="multipart/form-data">
+							<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row">
 											<div class="col-md-4">
+											
 												<label for="contact:name">Full Name*</label>
-												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
+												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact_name">
 											</div>
 											<div class="col-md-4">
 												<label for="contact:email">Business Name</label>
-												<input required type="text" value="" class="form-control" name="contact[email][required]" id="contact:email">
+												<input required type="text" value="" class="form-control" name="contact[email][required]" id="contact_email">
 											</div>
 											<div class="col-md-4">
 												<label for="contact:phone">Phone*</label>
-												<input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
+												<input type="text" value="" class="form-control" name="contact[phone]" id="contact_phone">
 											</div>
 									</div>
 									<div class="row">
 											<div class="col-md-4">
 												<label for="contact:subject">Email*</label>
-												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact_subject">
 											</div>
 											<div class="col-md-4">
 												<label for="contact:subject">Project Name</label>
-												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact_subject">
 											</div>
 											<div class="col-md-4">
 												<label for="contact_department">Department*</label>
@@ -944,11 +947,11 @@
 									<div class="row">
 											<div class="col-md-6">
 												<label for="contact:message">Project Description</label>
-												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact_message"></textarea>
 											</div>
 											<div class="col-md-6">
 												<label for="contact:message">Message*</label>
-												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact_message"></textarea>
 											</div>
 									</div>
 									<div class="row">
@@ -956,7 +959,7 @@
 												<label for="contact:attachment">File Attachment</label>
 
 												<!-- custom file upload -->
-												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
+												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact_attachment" data-btn-text="Select a File" />
 												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
 											</div>

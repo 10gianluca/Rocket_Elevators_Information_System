@@ -232,8 +232,8 @@ end
         cage_amount: Faker::Number.number(digits:1),
         QualityType: ["standard", "premium", "excelium"].sample,
         price_elevator: Faker::Number.number(digits:6),
-        total_price: Faker::Number.number(digits:6),
-        installation_fees: Faker::Number.number(digits:6),
+        total_price: Faker::Number.number(digits:5),
+        installation_fees: Faker::Number.number(digits:5),
         final_price: Faker::Number.number(digits:6),
         )
         quote.save
