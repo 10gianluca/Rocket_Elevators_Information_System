@@ -22,9 +22,7 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.integer :hybrid_occupant
       t.integer :hybrid_hour
       t.integer :cage_amount
-      t.boolean :standard_line
-      t.boolean :premium_line
-      t.boolean :excelium_line
+      t.string :QualityType
       t.integer :price_elevator
       t.integer :total_price
       t.integer :installation_fees

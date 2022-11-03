@@ -89,7 +89,18 @@ Employee.create!([{
 }
 ])
 
+
+
+file = File.read('./db/addresses.json')
+data_hash = JSON.parse(file)
+i = 0
+# variable scoping #
+# x = address.id
 99.times do
+
+    # ActiveRecord Query all users
+    # users = [user1, user2, user3, ... user99]
+    # counter = index
     user = User.new(
         title: Faker::Name.unique.last_name,
         first_name: Faker::Name.unique.first_name,
@@ -98,12 +109,7 @@ Employee.create!([{
         password: Faker::Internet.unique.password
     )
     user.save
-end
 
-file = File.read('./db/addresses.json')
-data_hash = JSON.parse(file)
-i = 0
-99.times do
     number_and_street1 = data_hash['addresses'].fetch(i)['address1']
     city1 = data_hash['addresses'].fetch(i)['city']
     postal_code1 = data_hash['addresses'].fetch(i)['postalCode']
@@ -119,17 +125,13 @@ i = 0
         notes: "none"
     )
     address.save
-i = i + 1    
-end
+    i = i + 1    
 
-
-# x = address.id
-99.times do
     customer = Customer.new(
-        # user_id: user.id,
+        user_id: user.id, #user_id: users[index].id
         customer_creation_date: Faker::Date.in_date_period,
         company_name: Faker::Company.name,
-        # address_id: x,
+        address_id: address.id,
         full_name_of_company_contact: Faker::Name.name,
         company_contact_phone: Faker::PhoneNumber.cell_phone,
         email_of_company_contact: Faker::Internet.email,
@@ -139,99 +141,72 @@ end
         technical_manager_email_for_service: Faker::Internet.email
         )
         customer.save
-end
 
+        full_address = Faker::Address.full_address
+        name = Faker::Name.name 
+        email = Faker::Internet.email
+        phone1 = Faker::PhoneNumber.cell_phone
+        name2 = Faker::Name.name 
+        email2 = Faker::Internet.email
+        phone2 = Faker::PhoneNumber.cell_phone
+        building = Building.new(
+            customer_id: customer.id,
+            Address_of_the_building: full_address,
+            Full_Name_of_the_building_administrator: name,
+            Email_of_the_administrator_of_the_building: email,
+            Phone_number_of_the_building_administrator: phone1,
+            Full_Name_of_the_technical_contact_for_the_building: name2,
+            Technical_contact_email_for_the_building: email2,
+            Technical_contact_phone_for_the_building: phone2
+        )
+        building.save
 
-([
-99.times do
-    full_address = Faker::Address.full_address
-    name = Faker::Name.name 
-    email = Faker::Internet.email
-    phone1 = Faker::PhoneNumber.cell_phone
-    name2 = Faker::Name.name 
-    email2 = Faker::Internet.email
-    phone2 = Faker::PhoneNumber.cell_phone
-    building = Building.new(
-        Address_of_the_building: full_address,
-        Full_Name_of_the_building_administrator: name,
-        Email_of_the_administrator_of_the_building: email,
-        Phone_number_of_the_building_administrator: phone1,
-        Full_Name_of_the_technical_contact_for_the_building: name2,
-        Technical_contact_email_for_the_building: email2,
-        Technical_contact_phone_for_the_building: phone2
-    )
-    building.save
-end
-])
-
-
-# BuildingsDetail.new
-([
-99.times do
-    building_detail = BuildingsDetail.new(
-        InformationKey: Faker::Lorem.sentence,
-        Value: Faker::Lorem.sentence
+        building_detail = BuildingsDetail.new(
+            building_id: building.id,
+            InformationKey: Faker::Lorem.sentence,
+            Value: Faker::Lorem.sentence
         )
         building_detail.save
-end
-])
 
-# Battery.new
-([
-99.times do
-    battery = Battery.new(
-        buildingType: ["residential", "commercial", "corporate", "hybrid"].sample,
-        status: ["Active", "Inactive"].sample,
-        employeeId: Faker::Number.number(digits: 1),
-        dateofcomissioning: Faker::Date.in_date_period,
-        dateoflastinspection: Faker::Date.in_date_period,
-        certificationofops: Faker::Lorem.sentence,
-        information: Faker::Lorem.sentence,
-        notes: Faker::Lorem.sentence
+        battery = Battery.new(
+            building_id: building.id,
+            buildingType: ["residential", "commercial", "corporate", "hybrid"].sample,
+            status: ["Active", "Inactive"].sample,
+            employeeId: Faker::Number.number(digits: 1),
+            dateofcomissioning: Faker::Date.in_date_period,
+            dateoflastinspection: Faker::Date.in_date_period,
+            certificationofops: Faker::Lorem.sentence,
+            information: Faker::Lorem.sentence,
+            notes: Faker::Lorem.sentence
+            )
+            battery.save
+
+        column = Column.new(
+            battery_id: battery.id,
+            Number_of_floors_served: Faker::Number.number(digits: 10),
+            Status: ['Active', 'Inactive'].sample,
+            Type: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
+            Information: Faker::Lorem.sentence,
+            Notes: Faker::Lorem.sentence
         )
-        battery.save
+        column.save
+
+        elevator = Elevator.new(
+            column_id: column.id,
+            serialNumber: Faker::Number.number(digits: 10),
+            model:Faker::Lorem.word,
+            status: ['Active', 'Inactive'].sample,
+            inspectionCertificate: Faker::Name.name,
+            commissioningDate: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
+            lastInspection: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
+            elevatorType: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
+            information: Faker::Lorem.sentence,
+            notes: Faker::Lorem.sentence
+        )
+        elevator.save
+
 end
-])
-
-
-
-
-# Column.new
 ([
-99.times do
-    column = Column.new(
-        # BatteryID: Faker::Number.number(digits: 5),
-        Number_of_floors_served: Faker::Number.number(digits: 10),
-        Status: ['Active', 'Inactive'].sample,
-        Type: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
-        Information: Faker::Lorem.sentence,
-        Notes: Faker::Lorem.sentence
-    )
-    column.save
-end
-])
-
-# Elevator.new
-([
-99.times do
-    elevator = Elevator.new(
-        # columnID: Faker::Number.number(digits: 10),
-        serialNumber: Faker::Number.number(digits: 10),
-        model:Faker::Lorem.word,
-        status: ['Active', 'Inactive'].sample,
-        inspectionCertificate: Faker::Name.name,
-        commissioningDate: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
-        lastInspection: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
-        elevatorType: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
-        information: Faker::Lorem.sentence,
-        notes: Faker::Lorem.sentence
-    )
-    elevator.save
-end
-])
-
-([
-
 99.times do
     quote = Quote.new(
         buildingType: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
@@ -255,9 +230,7 @@ end
         hybrid_occupant: Faker::Number.number(digits:1),
         hybrid_hour: Faker::Number.number(digits:1),
         cage_amount: Faker::Number.number(digits:1),
-        standard_line: Faker::Number.number(digits:1),
-        premium_line: Faker::Number.number(digits:1),
-        excelium_line: Faker::Number.number(digits:1),
+        QualityType: ["standard", "premium", "excelium"].sample,
         price_elevator: Faker::Number.number(digits:6),
         total_price: Faker::Number.number(digits:6),
         installation_fees: Faker::Number.number(digits:6),
