@@ -21,17 +21,18 @@ class LeadsController < ApplicationController
 
   # POST /leads or /leads.json
   def create
-    @lead = Lead.new(lead_params)
-    @lead.contact_name = params[:contact_name]
-    @lead.company_name = params[:company_name]
-    @lead.email = params[:email]
-    @lead.phone = params[:phone]
-    @lead.project_name = params[:project_name]
-    @lead.project_description = params[:project_description]
-    @lead.department = params[:department]
-    @lead.message = params[:message]
-    @lead.attached_file = params[:attached_file]
-    @lead.date = params[:date]
+    @lead = Lead.new(contact_params)
+    # @lead.contact_name = params[:full_name]
+    # @lead.company_name = params[:company_name]
+    # @lead.email = params[:email]
+    # @lead.phone = params[:phone]
+    # @lead.project_name = params[:project_name]
+    # @lead.project_description = params[:project_description]
+    # @lead.department = params[:department]
+    # @lead.message = params[:message]
+    # @lead.attached_file = params[:attached_file]
+    # @lead.date = params[:date]
+    # @lead = Lead.new(contact_params)
 
     respond_to do |format|
       if @lead.save
@@ -74,7 +75,7 @@ class LeadsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def lead_params
-      params.require(:lead).permit(:full_name, :company_name, :email, :phone, :project_name, :project_description, :department, :message, :attached_file, :date)
+    def contact_params
+      params.require(:leads).permit(:full_name, :company_name, :email, :phone, :project_name, :project_description, :department, :message)
     end
 end

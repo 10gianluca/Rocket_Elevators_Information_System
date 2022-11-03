@@ -243,6 +243,21 @@ end
 #Seeding for Leads table
 # Lead.destroy_all
 # Lead.new([{
+# Lead.create!({
+#     full_name: "Joe Blo",
+#     company_name: "Joe's Company",
+#     email: "joeblo@email.com",
+#     phone: "(514) 123-4567",
+#     project_name: "Joe's project", 
+#     project_description: "Integrating elevators in residential building",
+#     department: "Residential",
+#     message: "Elevators are a great tool for going to different floors.",
+#     attached_file: "none",
+#     date: "2022-10-31"
+# })
+#Seeding for Leads table
+# Lead.destroy_all
+# Lead.create!([{
 #     full_name: "Joe Bloe",
 #     company_name: "Joe's Company",
 #     email: "joeblo@email.com",
@@ -305,5 +320,4 @@ end
 
 #Seeding for Address table from addresses.json file containing 100 addresses
 #Create Address object to define variables coming from json file 
-
 
