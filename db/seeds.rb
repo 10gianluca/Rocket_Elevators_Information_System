@@ -7,6 +7,15 @@ require 'json'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Customer.destroy_all
+User.destroy_all
+Building.destroy_all
+Column.destroy_all
+Quote.destroy_all
+Elevator.destroy_all
+BuildingsDetail.destroy_all
+Battery.destroy_all
+Address.destroy_all
 Employee.destroy_all
 Employee.create!([{
   title: "Gopher",
@@ -80,27 +89,25 @@ Employee.create!([{
 }
 ])
 
-User.destroy_all
 99.times do
-    users = User.create!(
+    user = User.new(
         title: Faker::Name.unique.last_name,
         first_name: Faker::Name.unique.first_name,
         last_name: Faker::Name.unique.last_name,
         email: Faker::Internet.unique.email,
         password: Faker::Internet.unique.password
     )
-    users.save
+    user.save
 end
 
 file = File.read('./db/addresses.json')
 data_hash = JSON.parse(file)
-Address.destroy_all
 i = 0
 99.times do
     number_and_street1 = data_hash['addresses'].fetch(i)['address1']
     city1 = data_hash['addresses'].fetch(i)['city']
     postal_code1 = data_hash['addresses'].fetch(i)['postalCode']
-    address = Address.create!(
+    address = Address.new(
         type_of_address: "Residential",
         status: "Valid",
         entity: "Street",
@@ -116,13 +123,13 @@ i = i + 1
 end
 
 
-Customer.destroy_all
+# x = address.id
 99.times do
-    customer = Customer.create!(
-        # user_id: users.id,
+    customer = Customer.new(
+        # user_id: user.id,
         customer_creation_date: Faker::Date.in_date_period,
         company_name: Faker::Company.name,
-        #address_id: Faker::Address.full_address,
+        # address_id: x,
         full_name_of_company_contact: Faker::Name.name,
         company_contact_phone: Faker::PhoneNumber.cell_phone,
         email_of_company_contact: Faker::Internet.email,
@@ -135,7 +142,6 @@ Customer.destroy_all
 end
 
 
-Building.destroy_all
 ([
 99.times do
     full_address = Faker::Address.full_address
@@ -145,7 +151,7 @@ Building.destroy_all
     name2 = Faker::Name.name 
     email2 = Faker::Internet.email
     phone2 = Faker::PhoneNumber.cell_phone
-    building = Building.create!(
+    building = Building.new(
         Address_of_the_building: full_address,
         Full_Name_of_the_building_administrator: name,
         Email_of_the_administrator_of_the_building: email,
@@ -159,11 +165,10 @@ end
 ])
 
 
-BuildingsDetail.destroy_all
-# BuildingsDetail.create!
+# BuildingsDetail.new
 ([
 99.times do
-    building_detail = BuildingsDetail.create!(
+    building_detail = BuildingsDetail.new(
         InformationKey: Faker::Lorem.sentence,
         Value: Faker::Lorem.sentence
         )
@@ -171,11 +176,10 @@ BuildingsDetail.destroy_all
 end
 ])
 
-Battery.destroy_all
-# Battery.create!
+# Battery.new
 ([
 99.times do
-    battery = Battery.create!(
+    battery = Battery.new(
         buildingType: ["residential", "commercial", "corporate", "hybrid"].sample,
         status: ["Active", "Inactive"].sample,
         employeeId: Faker::Number.number(digits: 1),
@@ -192,11 +196,10 @@ end
 
 
 
-Column.destroy_all
-# Column.create!
+# Column.new
 ([
 99.times do
-    column = Column.create!(
+    column = Column.new(
         # BatteryID: Faker::Number.number(digits: 5),
         Number_of_floors_served: Faker::Number.number(digits: 10),
         Status: ['Active', 'Inactive'].sample,
@@ -208,11 +211,10 @@ Column.destroy_all
 end
 ])
 
-Elevator.destroy_all
-# Elevator.create!
+# Elevator.new
 ([
 99.times do
-    elevator = Elevator.create!(
+    elevator = Elevator.new(
         # columnID: Faker::Number.number(digits: 10),
         serialNumber: Faker::Number.number(digits: 10),
         model:Faker::Lorem.word,
@@ -228,11 +230,10 @@ Elevator.destroy_all
 end
 ])
 
-Quote.destroy_all
 ([
 
 99.times do
-    quote = Quote.create!(
+    quote = Quote.new(
         buildingType: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
         residential_apartment: Faker::Number.number(digits:2),
         residential_floor: Faker::Number.number(digits: 1),
@@ -268,7 +269,7 @@ Quote.destroy_all
 
 #Seeding for Leads table
 # Lead.destroy_all
-# Lead.create!([{
+# Lead.new([{
 #     full_name: "Joe Bloe",
 #     company_name: "Joe's Company",
 #     email: "joeblo@email.com",
