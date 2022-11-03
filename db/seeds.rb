@@ -146,16 +146,9 @@ Quote.destroy_all
         premium_line: Faker::Number.number(digits:1),
         excelium_line: Faker::Number.number(digits:1),
         price_elevator: Faker::Number.number(digits:6),
-        total_price: Faker::Number.number(digits:6),
-        installation_fees: Faker::Number.number(digits:6),
+        total_price: Faker::Number.number(digits:5),
+        installation_fees: Faker::Number.number(digits:5),
         final_price: Faker::Number.number(digits:6),
-        # Number_Of_Cages: Faker::Number.number(digits:1),
-        # Number_Of_Parking_Spaces: Faker::Number.number(digits:1),
-        # Number_Of_Companies: Faker::Number.number(digits:1),
-        # Unit_Price_Of_Elevator: Faker::Number.number(digits:5),
-        # Total_Price_Of_Each_Elevator: Faker::Number.number(digits:6),
-        # Installation_Fees: Faker::Number.number(digits:5),
-        # final_Price_: Faker::Number.number(digits:6)
         )
         quote.save
     end

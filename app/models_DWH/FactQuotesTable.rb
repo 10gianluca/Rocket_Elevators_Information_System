@@ -1,2 +1,0 @@
-class FactQuotesTable < ApplicationRecord
-end
