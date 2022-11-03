@@ -21,7 +21,7 @@ class LeadsController < ApplicationController
 
   # POST /leads or /leads.json
   def create
-    @lead = Lead.new(lead_params)
+    @lead = Lead.new(contact_params)
 
     respond_to do |format|
       if @lead.save
@@ -64,7 +64,7 @@ class LeadsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def lead_params
-      params.require(:lead).permit(:full_name, :company_name, :email, :phone, :project_name, :project_description, :department, :message, :attached_file, :date)
+    def contact_params
+      params.require(:leads).permit(:full_name, :company_name, :email, :phone, :project_name, :project_description, :department, :message)
     end
 end

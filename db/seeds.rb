@@ -119,6 +119,20 @@ Battery.destroy_all
 
 #Seeding for Leads table
 # Lead.destroy_all
+# Lead.create!({
+#     full_name: "Joe Blo",
+#     company_name: "Joe's Company",
+#     email: "joeblo@email.com",
+#     phone: "(514) 123-4567",
+#     project_name: "Joe's project", 
+#     project_description: "Integrating elevators in residential building",
+#     department: "Residential",
+#     message: "Elevators are a great tool for going to different floors.",
+#     attached_file: "none",
+#     date: "2022-10-31"
+# })
+#Seeding for Leads table
+# Lead.destroy_all
 # Lead.create!([{
 #     full_name: "Joe Bloe",
 #     company_name: "Joe's Company",
@@ -185,9 +199,6 @@ Battery.destroy_all
 require 'json'
 file = File.read('./db/addresses.json')
 data_hash = JSON.parse(file)
-
-
-
 Address.destroy_all
 i = 0
 99.times do
