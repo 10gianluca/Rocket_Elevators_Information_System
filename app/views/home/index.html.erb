@@ -884,9 +884,7 @@
 					<div class="row">
 						<!-- FORM -->
 						<div class="col-md-8 col-sm-8">
-							<%# <%= render 'contact/contact_us' %> 
 							<%= form_with url:leads_path, id:"fields", local:true, method: :post do |form| %>
-							<%# <%= form_with model: @lead do |form| %> 
 								    <div class="row">
                                             <div class="col-md-4">
                                                 <label for="contact:name">Full Name</label>
@@ -939,13 +937,7 @@
 
                                             </div>
                                     </div>
-									<br>
-									<%# <br>
-									Date
-									<%= form.date_select :date %> 
-
-								<%# <%= form.text_area :body, size: "60x10" %>
-								<%# <%= form.submit %> 
+									<br> 
 								<%= submit_tag "Submit", id:"submit", class:"btn btn-blue" %>
 							<% end %>
 						</div>
