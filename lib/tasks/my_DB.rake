@@ -4,11 +4,11 @@ conn = PG.connect(host: "localhost", dbname: "datawarehouse", :user => "glory", 
 namespace :pg do
 
   task reset: :environment do
-    Rake::Task["dwh:init"].invoke
-    Rake::Task["dwh:FactQuotes"].invoke
-    Rake::Task["dwh:FactContact"].invoke
-    Rake::Task["dwh:FactElevator"].invoke
-    Rake::Task["dwh:DimCustomers"].invoke
+    Rake::Task["pg:init"].invoke
+    Rake::Task["pg:FactQuotes"].invoke
+    Rake::Task["pg:FactContact"].invoke
+    Rake::Task["pg:FactElevator"].invoke
+    Rake::Task["pg:DimCustomers"].invoke
   end
 
   task db: :environment do
