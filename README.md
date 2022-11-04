@@ -60,7 +60,7 @@ SQL QUERIES:
     2- Bid solicitations made/month:
     SELECT to_char(created_at, 'Month') as month, Count(*) as Number_Of_Quotes FROM factquotes GROUP BY month
     3- Number of Elevators contained in the buildings belonging to each Customers:
-	SELECT COUNT(buildingid) as "Elevator Count", buildingid as "Building ID" FROM factelevator group BY buildingid ORDER BY COUNT(customerid)
+	SELECT COUNT(buildingid) as "Elevator Count", buildingid as "Building ID" FROM factelevator group BY buildingid ORDER BY COUNT(customerid
 TEAM MEMBERS
     Aditya Menon Sreeraj
     Gianluca Ciccone

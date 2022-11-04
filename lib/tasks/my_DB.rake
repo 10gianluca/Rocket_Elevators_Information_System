@@ -1,7 +1,7 @@
 require 'pg'
 # require 'faker'
 
-conn = PG.connecthost: "ls-c753c3308c0d4d7b96bc0dddfd5a25beb9a8e87c.crydppxblqbm.ca-central-1.rds.amazonaws.com", :user => "academy", :password => "!inMgoR&04mm1+x")
+conn = PG.connecthost: ("ls-c753c3308c0d4d7b96bc0dddfd5a25beb9a8e87c.crydppxblqbm.ca-central-1.rds.amazonaws.com", :user => "academy", :password => "!inMgoR&04mm1+x")
 namespace :pg do
 
   task reset: :environment do
