@@ -73,7 +73,7 @@ namespace :pg do
 
         
       end
-      conn.exec ("SELECT * FROM DimCustomers WHERE customerCity IS NOT NULL AND creation IS NOT NULL AND companyName IS NOT NULL AND fullNameOfCompanyMainContact IS NOT NULL AND emailOfTheCompanyMainContact IS NOT NULL AND nbElevator IS NOT NULL;")
+      # conn.exec ("SELECT * FROM DimCustomers WHERE customerCity IS NOT NULL AND creation IS NOT NULL AND companyName IS NOT NULL AND fullNameOfCompanyMainContact IS NOT NULL AND emailOfTheCompanyMainContact IS NOT NULL AND nbElevator IS NOT NULL;")
 
 end
 
