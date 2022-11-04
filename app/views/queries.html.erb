@@ -1,0 +1,6 @@
+<%#QUERY 1%>
+<p> There is <%=Lead.where('extract(month from created_at) = ?', 1).count%> contact us sent for the time period : 2022/01/..
+<%#QUERY 2%>
+<p> There is <%=Quote.where('extract(month from created_at) = ?', 1).count%> quote requests sent for the time period : 2022/01/..
+<%#QUERY 3%>
+<p> There is <%=Elevato.count / Customer.count %> elevator per customer for the time period : 2022/01/..
