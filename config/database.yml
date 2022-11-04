@@ -13,14 +13,15 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: mynewpassword
-  host: localhost
+  # username: root
+  # password: mynewpassword
+  # host: localhost
 
   host: ls-f2d6bd226744c0fcfc2009d804298a21ce412d05.crydppxblqbm.ca-central-1.rds.amazonaws.com
   port: 3306
   login: academy
   password: HeAz+=Sc-8CJ3bXv
+
 development:
   <<: *default
   database: rocketElevatorGroupWebsite_development
