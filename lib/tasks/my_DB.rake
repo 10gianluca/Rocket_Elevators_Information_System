@@ -18,9 +18,8 @@ namespace :pg do
     conn.exec("CREATE DATABASE DataWarehouse")
   end
 
-
   task init: :environment do
-    # Create the table
+    # Create the table in postgresql
     conn.exec "DROP TABLE IF EXISTS FactQuotes"
     conn.exec "CREATE TABLE FactQuotes(quoteId INTEGER, created_at DATE, companyName TEXT, email TEXT, nbElevator INTEGER)"
 
