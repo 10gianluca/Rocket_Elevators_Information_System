@@ -81,3 +81,6 @@ gem 'rails_admin'
 gem 'json'
 gem 'pg'
 
+gem "chartkick", "~> 4.2"
+
+gem "groupdate", "~> 6.1"
