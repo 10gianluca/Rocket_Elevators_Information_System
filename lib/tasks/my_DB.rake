@@ -1,7 +1,7 @@
 require 'pg'
 require 'faker'
 
-conn = PG.connect(host: "ls-c753c3308c0d4d7b96bc0dddfd5a25beb9a8e87c.crydppxblqbm.ca-central-1.rds.amazonaws.com", port: "5432", dbname: "datawarehouse", :login => "academy", :password => "!inMgoR&04mm1+x")
+conn = PG.connect(host: "ls-c753c3308c0d4d7b96bc0dddfd5a25beb9a8e87c.crydppxblqbm.ca-central-1.rds.amazonaws.com", port: "5432", dbname: "datawarehouse", :user => "academy", :password => "!inMgoR&04mm1+x")
 
 namespace :pg do
 
