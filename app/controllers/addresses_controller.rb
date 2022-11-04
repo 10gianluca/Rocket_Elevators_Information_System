@@ -4,6 +4,8 @@ class AddressesController < ApplicationController
   # GET /addresses or /addresses.json
   def index
     @addresses = Address.all
+
+    render json: @addresses
   end
 
   # GET /addresses/1 or /addresses/1.json
