@@ -62,11 +62,11 @@ Data Wearhouse Tables using PostgreSQL
 
 QUERIES for client:
 1- Contact Requests made/month:
-SELECTto_char(creation_date, 'YYYY-MM') as "Month", count(contact_id) as ContactPerMonth FROM public.fact_contacts (#wearhouseRecord) group by "Month" group by "Month desc;
+SELECTto_char(creation_at, 'YYYY-MM') as "Month", count(id) as ContactPerMonth FROM public.FactContact group by "Month" group by "Month desc;
 2- Bid solicitations made/month:
-SELECTto_char(creation_date, 'YYYY-MM') as "Month", count(quote_id) as QuotePerMonth FROM public.fact_quotes (#wearhouseRecord) group by "Month" group by "Month" desc;
+SELECTto_char(creation_date, 'YYYY-MM') as "Month", count(quote_id) as QuotePerMonth FROM public.FactQuotes group by "Month" group by "Month" desc;
 3- Number of Elevators per Customers:
-SELECT customer_id as "Customer", count(id) as ElevPerCustomers FROM public.fact_elevators (#wearhouseRecord) group by "Customer";
+SELECT customer_id as "Customer", count(id) as ElevPerCustomers FROM public.FactElevator group by "Customer";
 
 
 TEAM MEMBERS
