@@ -173,8 +173,8 @@ i = 0
             buildingType: ["residential", "commercial", "corporate", "hybrid"].sample,
             status: ["Active", "Inactive"].sample,
             employeeId: Faker::Number.number(digits: 1),
-            dateofcomissioning: Faker::Date.in_date_period,
-            dateoflastinspection: Faker::Date.in_date_period,
+            dateofcomissioning: Faker::Date.between(from: '2019-01-01', to: '2022-12-31'),
+            dateoflastinspection: Faker::Date.between(from: '2019-01-01', to: '2022-12-31'),
             certificationofops: Faker::Lorem.sentence,
             information: Faker::Lorem.sentence,
             notes: Faker::Lorem.sentence
@@ -197,8 +197,8 @@ i = 0
             model:Faker::Lorem.word,
             status: ['Active', 'Inactive'].sample,
             inspectionCertificate: Faker::Name.name,
-            commissioningDate: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
-            lastInspection: Faker::Date.between(from: '2022-01-01', to: '2022-12-31'),
+            commissioningDate: Faker::Date.between(from: '2019-01-01', to: '2022-12-31'),
+            lastInspection: Faker::Date.between(from: '2019-01-01', to: '2022-12-31'),
             elevatorType: ['residential', 'commercial', 'corporate', 'hybrid'].sample,
             information: Faker::Lorem.sentence,
             notes: Faker::Lorem.sentence
