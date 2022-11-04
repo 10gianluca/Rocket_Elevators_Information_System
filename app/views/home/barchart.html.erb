@@ -1,3 +1,3 @@
 <h1>This is the barchart page</h1>
 
-<%= bar_chart Elevator.group_by_day(:created_at, range: 1.month.ago.midnight..Time.now).sum(:column_id) %>
+<%= bar_chart Elevator.group_by_day(:created_at, range: 1.month.ago.midnight..Time.now).count (:column_id) %>
