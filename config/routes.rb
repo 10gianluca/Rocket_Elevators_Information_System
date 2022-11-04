@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get 'home/form'
     get 'home/login'
     get 'home/admin'
+    get 'home/barchart'
   resources :quotes
   post '/contacts', to: 'home#create'
   # For details on the DSL this file, see http://guides.rubyonrails.org/routing.html

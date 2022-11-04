@@ -192,6 +192,9 @@ i = 0
         column.save
 
         elevator = Elevator.new(
+            created_at: Time.now - i.days,
+            updated_at: Time.now - i.days,
+            
             column_id: column.id,
             serialNumber: Faker::Number.number(digits: 10),
             model:Faker::Lorem.word,
