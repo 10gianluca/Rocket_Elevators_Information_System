@@ -12,6 +12,8 @@ Week 4:
 		-populate Quote Request Form data entries in the Quote Request table
 Week 5:
 	-Back-End: create relationnal database and data wearhouse
+
+
 INSTALLATIONS & VERSIONS
 Built with:
 Ubuntu 22.04 LTS
@@ -26,6 +28,8 @@ gems and bundles:
 	j-query gem
 	faker gems for tables seeding
 	chartkick for bar chart on backoffice page
+
+
 INITIALIZATION & OPERATION
 bundle install for gems
 ruby-v: verifies installed version of Ruby
@@ -54,6 +58,8 @@ Data Wearhouse Tables using PostgreSQL
 2- FactConatct
 3- FactElevator
 4- DimCustomer
+
+
 QUERIES for client:
 1- Contact Requests made/month:
 SELECTto_char(creation_date, 'YYYY-MM') as "Month", count(contact_id) as ContactPerMonth FROM public.fact_contacts (#wearhouseRecord) group by "Month" group by "Month desc;
@@ -61,6 +67,8 @@ SELECTto_char(creation_date, 'YYYY-MM') as "Month", count(contact_id) as Contact
 SELECTto_char(creation_date, 'YYYY-MM') as "Month", count(quote_id) as QuotePerMonth FROM public.fact_quotes (#wearhouseRecord) group by "Month" group by "Month" desc;
 3- Number of Elevators per Customers:
 SELECT customer_id as "Customer", count(id) as ElevPerCustomers FROM public.fact_elevators (#wearhouseRecord) group by "Customer";
+
+
 TEAM MEMBERS
 Aditya Menon Sreeraj
 Gianluca Ciccone
