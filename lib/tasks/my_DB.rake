@@ -1,106 +1,101 @@
-#require File.expand_path('../config/application', __FILE__)
-#YouApp::Application.load_tasks
+require 'pg'
+require 'faker'
 
-#require 'pg'
+conn = PG.connect(host: "localhost", dbname: "datawarehouse", :user => "luca", :password => "ciccone")
 
-#desc "Managing the pg database"
-#task spec: ["pg:db:test:prepare"]
-#[1,2,3,4].each do |number|
-#  puts number
-#end
+namespace :pg do
 
-namespace :myDB do
-    desc "Manage database"
-    task :test do
-      # the code that you want to run
-      puts 'hello world!'
+  task reset: :environment do
+    Rake::Task["pg:init"].invoke
+    Rake::Task["pg:FactQuotes"].invoke
+    Rake::Task["pg:FactContact"].invoke
+    Rake::Task["pg:FactElevator"].invoke
+    Rake::Task["pg:DimCustomers"].invoke
+  end
 
-    end
-    task :test2 do
-      # the code that you want to run
-      puts 'hello world, again!'
+  task db: :environment do
+    conn.exec("DROP DATABASE IF EXISTS DataWarehouse")
+    conn.exec("CREATE DATABASE DataWarehouse")
+  end
+
+
+  task init: :environment do
+    # Create the table
+    conn.exec "DROP TABLE IF EXISTS FactQuotes"
+    conn.exec "CREATE TABLE FactQuotes(quoteId INTEGER, created_at DATE, companyName TEXT, email TEXT, nbElevator INTEGER)"
+
+    conn.exec "DROP TABLE IF EXISTS FactContact"
+    conn.exec "CREATE TABLE FactContact(contactId INTEGER, creation DATE, companyName TEXT, email TEXT, projectName TEXT)"
+
+    conn.exec "DROP TABLE IF EXISTS FactElevator"
+    conn.exec "CREATE TABLE FactElevator(serialNumber TEXT, dateOfCommisionning DATE, buildingid INTEGER, customerid INTEGER, buildingCity TEXT)"
+
+    conn.exec "DROP TABLE IF EXISTS DimCustomers"
+    conn.exec "CREATE TABLE DimCustomers(creation DATE, companyName TEXT, fullNameOfCompanyMainContact TEXT, emailOfTheCompanyMainContact TEXT, nbElevator INTEGER, customerCity TEXT)"
     
-    end
+  end
 
-  namespace :myTest do |ns|
-    desc "Pg"
+  task FactQuotes: :environment do
+    # Fill the FactQuotes table
+    Quote.find_each do |q|
+      conn.exec ("INSERT INTO FactQuotes (quoteId, created_at, companyName, email, nbElevator) VALUES ('#{q.id}', '#{q.created_at}', '#{Faker::Company.unique.name.gsub("'", " ")}', '#{Faker::Internet.email}', '#{q.cage_amount}')")
+  end  
+  end
 
-    task :drop do
-      Rake::Task["db:drop"].invoke
-    end
-
-    task :create do
-      Rake::Task["db:create"].invoke
-    end
-
-    task :setup do
-      Rake::Task["db:setup"].invoke
-    end
-
-    task :migrate do
-      Rake::Task["db:migrate"].invoke
-    end
-
-    task :rollback do
-      Rake::Task["db:rollback"].invoke
-    end
-
-    task :seed do
-      Rake::Task["db:seed"].invoke
-    end
-
-    task :version do
-      Rake::Task["db:version"].invoke
-    end
-
-    namespace :schema do
-      task :load do
-        Rake::Task["db:schema:load"].invoke
-      end
-
-      task :dump do
-        Rake::Task["db:schema:dump"].invoke
-      end
-    end
-
-    namespace :test do
-      task :prepare do
-        Rake::Task["db:test:prepare"].invoke
-      end
-    end
-
-    # append and prepend proper tasks to all the tasks defined here above
-    ns.tasks.each do |task|
-      task.enhance ["pg:set_custom_config"] do
-        Rake::Task["pg:revert_to_original_config"].invoke
-      end
+  task FactContact: :environment do
+    Lead.find_each do |l|
+        conn.exec ("INSERT INTO FactContact (contactId, creation, companyName, email, projectName) VALUES ('#{l.id}', '#{l.created_at}', '#{l.company_name.gsub("'", " ")}', '#{l.email}', '#{l.project_name.gsub("'", " ")}')")
     end
   end
 
-  task :set_custom_config do
-    @original_config = {
-      env_schema: "db/schema.rb",
-      config: Rails.application.config.dup
-    }
-
-    # set config variables for custom database
-    ENV['SCHEMA'] = "db_pg/schema.rb"
-    Rails.application.config.paths['db'] = ["db_pg"]
-    Rails.application.config.paths['db/migrate'] = ["db_pg/migrate"]
-    Rails.application.config.paths['db/seeds.rb'] = ["db_pg/seeds.rb"]
-    Rails.application.config.paths['config/database'] = ["config/database.postgres.yml"]
+  task FactElevator: :environment do
+    Address.find_each do |a|
+        conn.exec ("INSERT INTO FactElevator (buildingCity) VALUES ('#{a.city&.gsub("'", " ")}')")
+    end 
+            Customer.find_each do |c|
+                conn.exec ("INSERT INTO FactElevator (customerId) VALUES ('#{c.id}')")
+            end
+                Elevator.find_each do |e|#check for 'column_id' syntax.
+                    conn.exec ("INSERT INTO FactElevator (serialNumber, dateOfCommisionning, buildingId) VALUES ('#{e.serialNumber}', '#{e.commissioningDate}', '#{e.column_id}')")
+                end
   end
 
-  task :revert_to_original_config do
-    # reset config variables to original values
-    ENV['SCHEMA'] = @original_config[:env_schema]
-    Rails.application.config = @original_config[:config]
-  end
-end
-
-
-
+  task DimCustomers: :environment do
+    Address.find_each do |a|
+      conn.exec ("INSERT INTO DimCustomers (customerCity) VALUES ('#{a.city&.gsub("'", " ")}')")
+    end
+      Customer.find_each do |c|
+        conn.exec ("INSERT INTO DimCustomers (creation, companyName, fullNameOfCompanyMainContact, emailOfTheCompanyMainContact) VALUES ('#{c.customer_creation_date}', '#{c.company_name&.gsub("'", " ")}', '#{c.full_name_of_company_contact&.gsub("'", " ")}', '#{c.email_of_company_contact}')")
+      end
+        Quote.find_each do |qo|
+          conn.exec ("INSERT INTO DimCustomers (nbElevator) VALUES ('#{qo.cage_amount}')")
+        end
 
         
+      end
+      
+      
+      
+      conn.exec ("DELETE FROM DimCustomers WHERE customerCity IS NULL AND creation IS NULL AND companyName IS NULL AND fullNameOfCompanyMainContact IS NULL AND emailOfTheCompanyMainContact IS NULL AND nbElevator IS NULL;")
 
-        
+    end
+
+  namespace :qs do
+    
+    q_one = "SELECT COUNT(contactId) EXTRACT(MONTH FROM t.creation) as MonthOfDate
+    FROM FactContact t"
+    q_two = "SELECT COUNT(quoteId) created_at FROM FactQuotes GROUP BY MONTH(creation)"
+    q_three = "SELECT id, nbElevator FROM DimCustomers"
+    
+    task q_one: :environment do
+        conn.exec (q_one)
+    end
+
+    task q_two: :environment do
+        conn.exec (q_two)
+    end
+
+    task q_three: :environment do
+        conn.exec (q_three)
+    end
+  end

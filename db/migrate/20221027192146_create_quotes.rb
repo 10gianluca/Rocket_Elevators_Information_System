@@ -27,6 +27,9 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.integer :total_price
       t.integer :installation_fees
       t.integer :final_price
+      t.datetime :created_at, null: false
+      t.datetime :updated_at, null: false
+
 
       t.timestamps
     end
