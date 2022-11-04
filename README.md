@@ -56,11 +56,11 @@ INITIALIZATION & OPERATION
         4- DimCustomer
 SQL QUERIES:
     1- Contact Requests made/month:
-    SELECTto_char(creation_at, 'YYYY-MM') as "Month", count(id) as ContactPerMonth FROM lib.FactContact group by "Month" group by "Month" desc;
+	SELECT to_char(creation, 'Month') as month, Count(*) as Number_Of_contact from factcontact GROUP BY month
     2- Bid solicitations made/month:
     SELECT to_char(created_at, 'Month') as month, Count(*) as Number_Of_Quotes FROM factquotes GROUP BY month
     3- Number of Elevators contained in the buildings belonging to each Customers:
-    SELECT COUNT(customerid) as "Elevator Count", buildingid as "Building ID"FROM factelevator GROUP BY buildingid ORDER BY COUNT(customerid)
+	SELECT COUNT(buildingid) as "Elevator Count", buildingid as "Building ID" FROM factelevator group BY buildingid ORDER BY COUNT(customerid)
 TEAM MEMBERS
     Aditya Menon Sreeraj
     Gianluca Ciccone

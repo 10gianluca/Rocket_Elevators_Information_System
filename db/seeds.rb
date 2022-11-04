@@ -7,16 +7,17 @@ require 'json'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Customer.destroy_all
-User.destroy_all
-Building.destroy_all
-Column.destroy_all
-Quote.destroy_all
-Elevator.destroy_all
-BuildingsDetail.destroy_all
-Battery.destroy_all
-Address.destroy_all
-Employee.destroy_all
+# Customer.destroy_all
+# User.destroy_all
+# Building.destroy_all
+# Column.destroy_all
+# Quote.destroy_all
+# Elevator.destroy_all
+# BuildingsDetail.destroy_all
+# Battery.destroy_all
+# Address.destroy_all
+# Employee.destroy_all
+# Lead.destroy_all
 Employee.create!([{
   title: "Gopher",
   firstname: "Mathieu",
@@ -129,7 +130,7 @@ i = 0
 
     customer = Customer.new(
         user_id: user.id, #user_id: users[index].id
-        customer_creation_date: Faker::Date.in_date_period,
+        customer_creation_date: Faker::Date.between(from: '2019-01-01', to: '2022-12-31'),
         company_name: Faker::Company.name,
         address_id: address.id,
         full_name_of_company_contact: Faker::Name.name,
@@ -256,7 +257,6 @@ end
 #     date: "2022-10-31"
 # })
 # Seeding for Leads table
-Lead.destroy_all
 Lead.create!([{
     full_name: "Joe Bloe",
     company_name: "Joe's Company",

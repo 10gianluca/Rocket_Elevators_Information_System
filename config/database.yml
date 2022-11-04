@@ -16,7 +16,7 @@ default: &default
   # username: root
   # password: mynewpassword
   # host: localhost
-  database: GianlucaCiccone
+  # database: GianlucaCiccone
   host: ls-f2d6bd226744c0fcfc2009d804298a21ce412d05.crydppxblqbm.ca-central-1.rds.amazonaws.com
   port: 3306
   login: academy

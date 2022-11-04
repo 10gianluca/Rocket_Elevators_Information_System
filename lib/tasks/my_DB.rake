@@ -1,8 +1,7 @@
 require 'pg'
 # require 'faker'
 
-conn = PG.connect(host: "ls-c753c3308c0d4d7b96bc0dddfd5a25beb9a8e87c.crydppxblqbm.ca-central-1.rds.amazonaws.com", :user => "academy", :password => "!inMgoR&04mm1+x")
-
+conn = PG.connecthost: "ls-c753c3308c0d4d7b96bc0dddfd5a25beb9a8e87c.crydppxblqbm.ca-central-1.rds.amazonaws.com", :user => "academy", :password => "!inMgoR&04mm1+x")
 namespace :pg do
 
   task reset: :environment do
@@ -44,7 +43,7 @@ namespace :pg do
 
   task FactContact: :environment do
     Lead.find_each do |l|
-        conn.exec ("INSERT INTO FactContact (contactId, creation, companyName, email, projectName) VALUES ('#{l.id}', '#{l.created_at}', '#{l.company_name.gsub("'", " ")}', '#{l.email}', '#{l.project_name.gsub("'", " ")}')")
+        conn.exec ("INSERT INTO FactContact (contactId, creation, companyName, email, projectName) VALUES ('#{l.id}', '#{l.date}', '#{l.company_name.gsub("'", " ")}', '#{l.email}', '#{l.project_name.gsub("'", " ")}')")
     end
   end
 
@@ -79,13 +78,13 @@ end
 
   namespace :qs do
     
-    q_one = "SELECT COUNT(contactId) EXTRACT(MONTH FROM t.creation) as MonthOfDate
-    FROM FactContact t"
-    q_two = "SELECT COUNT(quoteId) created_at FROM FactQuotes GROUP BY MONTH(creation)"
-    q_three = "SELECT id, nbElevator FROM DimCustomers"
+    q_one = "SELECT to_char(creation, 'Month') as month, Count(*) as Number_Of_contact from factcontact GROUP BY month"
+    q_two = "SELECT to_char(created_at, 'Month') as month, Count(*) as Number_Of_Quotes FROM factquotes GROUP BY month"
+    q_three = "SELECT COUNT(buildingid) as "Elevator Count", buildingid as "Building ID" FROM factelevator group BY buildingid ORDER BY COUNT(customerid)"
     
     task q_one: :environment do
-        conn.exec (q_one)
+        question1 = conn.exec (q_one)
+        pp question1
     end
 
     task q_two: :environment do
