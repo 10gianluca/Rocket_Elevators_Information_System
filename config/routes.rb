@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'
   post '/form_submit', to: 'lead#create'
+  get '/queries', to: 'queries'
+
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # get 'contact/_contact_us', to: 'contact#_contact_us', as: 'new_contact'

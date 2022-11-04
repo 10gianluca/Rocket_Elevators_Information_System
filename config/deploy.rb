@@ -1,5 +1,7 @@
+load 'lib/deploy/seed.rb'
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.0"
+
 
 set :rbenv_type, :user # or :system, or :fullstaq (for Fullstaq Ruby), depends on your rbenv setup
 set :rbenv_ruby, File.read('.ruby-version').strip
@@ -9,17 +11,6 @@ set :rbenv_roles, :all # default value
 
 set :application, "GianlucaCiccone"
 set :repo_url, "https://github.com/10gianluca/RubyRocketWebsite"
-
-namespace :deploy do
-    desc "reload the database with seed data"
-    task :seed do
-      on roles(:all) do
-        within current_path do
-          execute :bundle, :exec, 'rails', 'db:seed', 'RAILS_ENV=production'
-        end
-      end
-    end
-  end
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
