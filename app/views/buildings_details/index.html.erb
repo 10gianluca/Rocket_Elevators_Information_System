@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Buildings Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buildings_details.each do |buildings_detail| %>
+      <tr>
+        <td><%= link_to 'Show', buildings_detail %></td>
+        <td><%= link_to 'Edit', edit_buildings_detail_path(buildings_detail) %></td>
+        <td><%= link_to 'Destroy', buildings_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buildings Detail', new_buildings_detail_path %>

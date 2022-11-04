@@ -1,0 +1,18 @@
+# default: &default
+#   adapter: postgres
+#   encoding: utf8
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   username: luca
+#   password: ciccone
+#   host: localhost
+# # default: &default
+# #   adapter: postgres
+# #   encoding: utf8
+# #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+# #   username: glory
+# #   password: montreal
+# #   host: localhost
+
+#  development:
+#    <<: *default
+#    database: postgres

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Columnid:</strong>
+  <%= @elevator.columnID %>
+</p>
+
+<p>
+  <strong>Serialnumber:</strong>
+  <%= @elevator.serialNumber %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @elevator.model %>
+</p>
+
+<p>
+  <strong>elevatorType:</strong>
+  <%= @elevator.elevatorType %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @elevator.status %>
+</p>
+
+<p>
+  <strong>Commissioningdate:</strong>
+  <%= @elevator.commissioningDate %>
+</p>
+
+<p>
+  <strong>Lastinspection:</strong>
+  <%= @elevator.lastInspection %>
+</p>
+
+<p>
+  <strong>Inspectioncertificate:</strong>
+  <%= @elevator.inspectionCertificate %>
+</p>
+
+<p>
+  <strong>Information:</strong>
+  <%= @elevator.information %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @elevator.notes %>
+</p>
+
+<%= link_to 'Edit', edit_elevator_path(@elevator) %> |
+<%= link_to 'Back', elevators_path %>
