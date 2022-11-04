@@ -48,7 +48,7 @@ end
 
 task FactElevator: :environment do
 
-  Addresse.find_each do |a|
+  Address.find_each do |a|
       conn.exec ("INSERT INTO FactElevator (buildingCity) VALUES ('#{a.city.gsub("'", " ")}')")
   end
           Customer.find_each do |c|
@@ -60,7 +60,7 @@ task FactElevator: :environment do
   end
 
 task DimCustomers: :environment do
-  Addresse.find_each do |a|
+  Address.find_each do |a|
       conn.exec ("INSERT INTO DimCustomers (customerCity) VALUES ('#{a.city.gsub("'", " ")}')")
   end
       Customer.find_each do |c|
