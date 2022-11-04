@@ -78,9 +78,9 @@ end
 
   namespace :qs do
     
-    q_one = "SELECT to_char(creation, 'Month') as month, Count(*) as Number_Of_contact from factcontact GROUP BY month"
-    q_two = "SELECT to_char(created_at, 'Month') as month, Count(*) as Number_Of_Quotes FROM factquotes GROUP BY month"
-    q_three = "SELECT COUNT(buildingid) as "Elevator Count", buildingid as "Building ID" FROM factelevator group BY buildingid ORDER BY COUNT(customerid)"
+    # q_one = "SELECT to_char(creation, 'Month') as month, Count(*) as Number_Of_contact from factcontact GROUP BY month"
+    # q_two = "SELECT to_char(created_at, 'Month') as month, Count(*) as Number_Of_Quotes FROM factquotes GROUP BY month"
+    # q_three = "SELECT COUNT(buildingid) as "Elevator Count", buildingid as "Building ID" FROM factelevator group BY buildingid ORDER BY COUNT(customerid)"
     
     task q_one: :environment do
         question1 = conn.exec (q_one)
