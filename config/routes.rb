@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  
   resources :customers
   resources :employees
   resources :buildings_details
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
   resources :elevators  
   resources :addresses
   resources :leads
+  resources :lists, only: [:index, :show, :create, :update, :destroy] do
+    resources :items, except: [:new]
+  end
   devise_for :users
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'

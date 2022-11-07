@@ -1,4 +1,5 @@
 class UserListsController < ApplicationController
+    skip_before_filter :verify_authenticity_token
     before_action :set_user_list, only: %i[ show edit update destroy ]
     # GET /user_lists or /user_lists.json
     def index

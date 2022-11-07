@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quotes</h1>
+
+<table>
+    <thread>
+        <tr>
+            <th>Number Of Apartments In The Building</th>
+            <th>Number Of Floors, Excluding Basements</th>
+            <th>Number Of Basements Contained In The Building</th>
+            <th>Number Of Distinct Businesses</th>
+            <th>Number Of Floors, Excluding Basements</th>
+            <th>Number Of Basements Contained In The Building</th>
+            <th>Number Of Parking Space Available</th>
+            <th>Number Of Elevator Cages To Be Deployed</th>
+            <th>Number Of Separate Tenant Companies</th>
+            <th>Unit Price Of Elevator</th>
+            <th>Total Price Of Elevator</th>
+            <th>Installation Fees</th>
+            <th>final price</th>
+            <th colspan="3"></th>
+        </tr>
+    </thread>
+
+    <thbody>
+        <% @quotes.each do |quote| %>
+            <tr>
+                <td><%= quote.number_of_apartments_in_the_building %></td>
+                <td><%= quote.number_of_floors_excluding_basements %></td>
+                <td><%= quote.number_of_basements_contained_in_the_building %></td>
+                <td><%= quote.number_of_distinct_businesses %></td>
+                <td><%= quote.number_of_floors_excluding_basements %></td>
+                <td><%= quote.number_of_basements_contained_in_the_building %></td>
+                <td><%= quote.number_of_parking_space_available %></td>
+                <td><%= quote.number_of_elevator_cages_to_be_deployed %></td>
+                <td><%= quote.number_of_separate_tenant_companies %></td>
+                <td><%= quote.unit_price_of_elevator %></td>
+                <td><%= quote.total_price_of_elevator %></td>
+                <td><%= quote.installation_fees %></td>
+                <td><%= quote.final_price %></td>
+                <td><%= link_to 'Show', quote %></td>
+                <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+                <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+    </thbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quote', new_quote_path %>
