@@ -39,11 +39,29 @@
 #   end
 # end  
 class QuotesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
+  
+
   before_action :set_quote, only: %i[ show edit update destroy ]
+
+  def create
+    ...
+   
+      respond_to do |format|
+        if @quote.save
+          format.html { redirect_to lead_url(@quote), notice: "quote was successfully created." }
+          format.json { render :show, status: :created, location: @quote }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @quote.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  end
 
   # GET /quotes or /quotes.json
   def index
-    @quotes = Quote.all
+    @quote = Quote.all
   end
 
   # GET /quotes/1 or /quotes/1.json
@@ -60,56 +78,46 @@ class QuotesController < ApplicationController
   end
   
   # POST /quotes or /quotes.json
-  def create 
+  # def create 
 
-    @quote = Quote.create 
-    @quote.residential_type = params[:residential_type]
-    @quote.commercial_type = params[:commercial_type]
-    @quote.corporate_type = params[:corporate_type]
-    @quote.hybrid_type = params[:hybrid_type]
-    @quote.residential_apartment= params[:residential_apartment]
-    @quote.residential_floor= params[:residential_floor]
-    @quote.residential_basement= params[:residential_basement]
-    @quote.commercial_business= params[:commercial_business]
-    @quote.commercial_floor= params[:commercial_floor]
-    @quote.commercial_basement= params[:commercial_basement]
-    @quote.commercial_parking= params[:commercial_parking]
-    @quote.commercial_cage= params[:commercial_cage]
-    @quote.corporate_companie= params[:corporate_companie]
-    @quote.corporate_floor= params[:corporate_floor]
-    @quote.corporate_basement= params[:corporate_basement]
-    @quote.corporate_parking= params[:corporate_parking]
-    @quote.corporate_occupant= params[:corporate_occupant]
-    @quote.hybrid_business= params[:hybrid_business]
-    @quote.hybrid_floor= params[:hybrid_floor]
-    @quote.hybrid_basement= params[:hybrid_basement]
-    @quote.hybrid_parking= params[:hybrid_parking]
-    @quote.hybrid_occupant= params[:hybrid_occupant]
-    @quote.hybrid_hour= params[:hybrid_hour]
-    @quote.cage_amount= params[:cage_amount]
-    @quote.standard_line= params[:standard_line]
-    @quote.premium_line= params[:premium_line]
-    @quote.excelium_line= params[:excelium_line]
-    @quote.price_elevator= params[:price_elevator]
-    @quote.total_price= params[:total_price]
-    @quote.installation_fees= params[:installation_fees]
-    @quote.final_price= params[:final_price]
-    @quote.save
-    redirect_to @quote
-  end
+  #   @quote = Quote.create 
+  #   # @quote.residential_type = params[:residential_type] 
+  #   # @quote.commercial_type = params[:commercial_type] 
+  #   # @quote.corporate_type = params[:corporate_type]
+  #   # @quote.hybrid_type = params[:hybrid_type]
+  #   # @quote.residential_apartment= params[:residential_apartment]
+  #   # @quote.residential_floor= params[:residential_floor]
+  #   # @quote.residential_basement= params[:residential_basement]
+  #   # @quote.commercial_business= params[:commercial_business]
+  #   # @quote.commercial_floor= params[:commercial_floor]
+  #   # @quote.commercial_basement= params[:commercial_basement]
+  #   # @quote.commercial_parking= params[:commercial_parking]
+  #   # @quote.commercial_cage= params[:commercial_cage]
+  #   # @quote.corporate_companie= params[:corporate_companie]
+  #   # @quote.corporate_floor= params[:corporate_floor]
+  #   # @quote.corporate_basement= params[:corporate_basement]
+  #   # @quote.corporate_parking= params[:corporate_parking]
+  #   # @quote.corporate_occupant= params[:corporate_occupant]
+  #   # @quote.hybrid_business= params[:hybrid_business]
+  #   # @quote.hybrid_floor= params[:hybrid_floor]
+  #   # @quote.hybrid_basement= params[:hybrid_basement]
+  #   # @quote.hybrid_parking= params[:hybrid_parking]
+  #   # @quote.hybrid_occupant= params[:hybrid_occupant]
+  #   # @quote.hybrid_hour= params[:hybrid_hour]
+  #   # @quote.cage_amount= params[:cage_amount]
+  #   # # @quote.standard_line = params[:standard_line] 
+  #   # # @quote.prenium_line = params[:prenium_line]
+  #   # # @quote.excelium_line = params[:excelium_line] 
+  #   # @quote.price_elevator= params[:price_elevator]
+  #   # @quote.total_price= params[:total_price]
+  #   # @quote.installation_fees= params[:installation_fees]
+  #   # @quote.final_price= params[:final_price]
+  #   # @quote.save
+  #   # redirect_to @quote
+  # end
   
-    respond_to do |format|
-      if @quote.save
-        format.html do
-          redirect_to '/'
-        end
-        format.json { render json: @quote }
-      else
-        format.html { render 'new' }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    
+  # end
 
   # PATCH/PUT /quotes/1 or /quotes/1.json
   def update
@@ -123,6 +131,7 @@ class QuotesController < ApplicationController
       end
     end
   end
+
 
   # DELETE /quotes/1 or /quotes/1.json
   def destroy
@@ -141,7 +150,7 @@ class QuotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quote_params
-      params.fetch(:quote, {})
+      params.fetch(:quote).permit(:residential_apartment, :residential_floor, :residential_basement, :commercial_business, :commercial_floor, :commercial_basement, :commercial_parking, :commercial_cage, :corporate_companie, :corporate_floor, :corporate_basement, :corporate_parking, :corporate_occupant, :hybrid_business, :hybrid_floor, :hybrid_basement, :hybrid_parking, :hybrid_occupant, :hybrid_hour)
     end
 end
 

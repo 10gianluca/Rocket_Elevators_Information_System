@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  
   resources :customers
   resources :employees
   resources :buildings_details
@@ -9,6 +10,9 @@ Rails.application.routes.draw do
   resources :elevators  
   resources :addresses
   resources :leads
+  resources :lists, only: [:index, :show, :create, :update, :destroy] do
+    resources :items, except: [:new]
+  end
   devise_for :users
   get 'quotes/requestQuote'
   post '/request_quote', to: 'quotes#create'
@@ -17,16 +21,14 @@ Rails.application.routes.draw do
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # get 'contact/_contact_us', to: 'contact#_contact_us', as: 'new_contact'
-  #get 'home/index'
     root "home#index"
     get 'home/corporate'
     get 'home/residential'
     get 'home/form'
     get 'home/login'
     get 'home/admin'
+    get 'home/barchart'
   resources :quotes
-  post '/contacts', to: 'home#create'
   # For details on the DSL this file, see http://guides.rubyonrails.org/routing.html
 
 end

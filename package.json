@@ -2,6 +2,8 @@
   "name": "rocketElevatorGroupWebsite",
   "private": true,
   "dependencies": {
+    "chart.js": "^3.9.1",
+    "chartkick": "^4.2.0",
     "jquery": "^3.6.1"
   }
 }

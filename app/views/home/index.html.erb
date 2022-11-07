@@ -884,105 +884,7 @@
 					<div class="row">
 						<!-- FORM -->
 						<div class="col-md-8 col-sm-8">
-
-							<%
-=begin%>
- <h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
-							<!-- Alert Success -->
-							<div id="alert_success" class="alert alert-success mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Thank You!</strong> Your message successfully sent!
-							</div><!-- /Alert Success -->
-
-
-							<!-- Alert Failed -->
-							<div id="alert_failed" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>[SMTP] Error!</strong> Internal server error!
-							</div><!-- /Alert Failed -->
-
-
-							<!-- Alert Mandatory -->
-							<div id="alert_mandatory" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-							</div><!-- /Alert Mandatory -->
-
-
-							<form action="/request_quote" method="post" enctype="multipart/form-data">
-							<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-								<fieldset>
-									<input type="hidden" name="action" value="contact_send" />
-
-									<div class="row">
-											<div class="col-md-4">
-											
-												<label for="contact:name">Full Name*</label>
-												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact_name">
-											</div>
-											<div class="col-md-4">
-												<label for="contact:email">Business Name</label>
-												<input required type="text" value="" class="form-control" name="contact[email][required]" id="contact_email">
-											</div>
-											<div class="col-md-4">
-												<label for="contact:phone">Phone*</label>
-												<input type="text" value="" class="form-control" name="contact[phone]" id="contact_phone">
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-md-4">
-												<label for="contact:subject">Email*</label>
-												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact_subject">
-											</div>
-											<div class="col-md-4">
-												<label for="contact:subject">Project Name</label>
-												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact_subject">
-											</div>
-											<div class="col-md-4">
-												<label for="contact_department">Department*</label>
-												<select class="form-control pointer" name="contact[department]">
-													<option value="">--- Select ---</option>
-													<option value="Marketing">Residential</option>
-													<option value="Webdesign">Corporate</option>
-												</select>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-md-6">
-												<label for="contact:message">Project Description</label>
-												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact_message"></textarea>
-											</div>
-											<div class="col-md-6">
-												<label for="contact:message">Message*</label>
-												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact_message"></textarea>
-											</div>
-									</div>
-									<div class="row">
-											<div class="col-md-12">
-												<label for="contact:attachment">File Attachment</label>
-
-												<!-- custom file upload -->
-												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact_attachment" data-btn-text="Select a File" />
-												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
-
-											</div>
-									</div>
-
-								</fieldset>
-
-								<div class="row">
-									<div class="col-md-12">
-										<button type="submit" class="btn btn-blue"><i class="fa fa-check"></i> SEND MESSAGE</button>
-									</div>
-								</div>
-							</form> 
-<%
-=end%>
-
-							<%# <%= render 'contact/contact_us' %> 
 							<%= form_with url:leads_path, id:"fields", local:true, method: :post do |form| %>
-							<%# <%= form_with model: @lead do |form| %> 
 								    <div class="row">
                                             <div class="col-md-4">
                                                 <label for="contact:name">Full Name</label>
@@ -1035,13 +937,7 @@
 
                                             </div>
                                     </div>
-									<br>
-									<%# <br>
-									Date
-									<%= form.date_select :date %> 
-
-								<%# <%= form.text_area :body, size: "60x10" %>
-								<%# <%= form.submit %> 
+									<br> 
 								<%= submit_tag "Submit", id:"submit", class:"btn btn-blue" %>
 							<% end %>
 						</div>

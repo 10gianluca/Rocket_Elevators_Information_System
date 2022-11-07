@@ -1,5 +1,8 @@
 require 'pg'
 # require 'faker'
+require 'faker'
+
+#conn = PG.connect(host: "localhost", dbname: "datawarehouse", :user => "luca", :password => "ciccone")
 
 conn = PG.connect(host: "ls-c753c3308c0d4d7b96bc0dddfd5a25beb9a8e87c.crydppxblqbm.ca-central-1.rds.amazonaws.com", :user => "academy", :password => "!inMgoR&04mm1+x")
 namespace :pg do
@@ -17,9 +20,8 @@ namespace :pg do
     conn.exec("CREATE DATABASE GianlucaCiccone")
   end
 
-
   task init: :environment do
-    # Create the table
+    # Create the table in postgresql
     conn.exec "DROP TABLE IF EXISTS FactQuotes"
     conn.exec "CREATE TABLE FactQuotes(quoteId INTEGER, created_at DATE, companyName TEXT, email TEXT, nbElevator INTEGER)"
 

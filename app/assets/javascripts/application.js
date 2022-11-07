@@ -22,3 +22,5 @@
 //= require cable
 //= require contact
 //= require demo.revolution_slider
+//= require chartkick
+//= require Chart.bundle
